@@ -9,6 +9,7 @@ import plotly.express as px
 import seaborn as sns
 import dash
 import json
+
 # Charger le fichier CSV
 file_path = 'Flight_delay.csv'  # Remplacez par le chemin correct si nécessaire
 df = pd.read_csv(file_path)
