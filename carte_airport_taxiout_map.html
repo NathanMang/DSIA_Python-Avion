@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_077e2623ebae16b18000dcad7df9b5a8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_077e2623ebae16b18000dcad7df9b5a8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_077e2623ebae16b18000dcad7df9b5a8 = L.map(
+                "map_077e2623ebae16b18000dcad7df9b5a8",
+                {
+                    center: [39.8283, -98.5795],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3d2464779e0e6d0bf26ee7d2e0583f11 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_3d2464779e0e6d0bf26ee7d2e0583f11.addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+            var circle_marker_8d5dc59ae3c4f83338a54b4d83f64b1c = L.circleMarker(
+                [33.6407, -84.4277],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.023844161373878, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_9ff953a66b59c106f307ea18b3ec70f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67b7cb7290e2461e949c5fa9302ed18c = $(`<div id="html_67b7cb7290e2461e949c5fa9302ed18c" style="width: 100.0%; height: 100.0%;">ATL: Retard Moyen de l'aéroport (TaxiOut): 24.047688322747756 min</div>`)[0];
+                popup_9ff953a66b59c106f307ea18b3ec70f8.setContent(html_67b7cb7290e2461e949c5fa9302ed18c);
+            
+        
+
+        circle_marker_8d5dc59ae3c4f83338a54b4d83f64b1c.bindPopup(popup_9ff953a66b59c106f307ea18b3ec70f8)
+        ;
+
+        
+    
+    
+            var circle_marker_ab3a73ef93cc0da91f6e3db92c6ad8d1 = L.circleMarker(
+                [39.1754, -76.6684],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.213863514239656, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_5facbb224f007b1c27d1e71a83f2032b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cbef5055f6f82b0552dec7805588d83f = $(`<div id="html_cbef5055f6f82b0552dec7805588d83f" style="width: 100.0%; height: 100.0%;">BWI: Retard Moyen de l'aéroport (TaxiOut): 14.427727028479312 min</div>`)[0];
+                popup_5facbb224f007b1c27d1e71a83f2032b.setContent(html_cbef5055f6f82b0552dec7805588d83f);
+            
+        
+
+        circle_marker_ab3a73ef93cc0da91f6e3db92c6ad8d1.bindPopup(popup_5facbb224f007b1c27d1e71a83f2032b)
+        ;
+
+        
+    
+    
+            var circle_marker_ba508c947813492998f828147b5a2281 = L.circleMarker(
+                [35.214, -80.9431],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.342075542728072, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_fff6e8ca088d98442e322dc6c91beac2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_87ecf92521187dcabd36458d3098293e = $(`<div id="html_87ecf92521187dcabd36458d3098293e" style="width: 100.0%; height: 100.0%;">CLT: Retard Moyen de l'aéroport (TaxiOut): 24.684151085456143 min</div>`)[0];
+                popup_fff6e8ca088d98442e322dc6c91beac2.setContent(html_87ecf92521187dcabd36458d3098293e);
+            
+        
+
+        circle_marker_ba508c947813492998f828147b5a2281.bindPopup(popup_fff6e8ca088d98442e322dc6c91beac2)
+        ;
+
+        
+    
+    
+            var circle_marker_192b7198c806708446575c820d1360ac = L.circleMarker(
+                [39.8561, -104.6737],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.21877393006041, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_99d9dfdef46ac973cac975892e75dcb7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0b1c144de542eac7cb62e24f833b67ff = $(`<div id="html_0b1c144de542eac7cb62e24f833b67ff" style="width: 100.0%; height: 100.0%;">DEN: Retard Moyen de l'aéroport (TaxiOut): 18.43754786012082 min</div>`)[0];
+                popup_99d9dfdef46ac973cac975892e75dcb7.setContent(html_0b1c144de542eac7cb62e24f833b67ff);
+            
+        
+
+        circle_marker_192b7198c806708446575c820d1360ac.bindPopup(popup_99d9dfdef46ac973cac975892e75dcb7)
+        ;
+
+        
+    
+    
+            var circle_marker_f86fa80bd18787da0c09a996548a455d = L.circleMarker(
+                [32.8998, -97.0403],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.944727041511491, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_f341b6d16a59cf18d8c36703e14f0d85 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_de60ede7d7536e1ef4c1d175b9bee454 = $(`<div id="html_de60ede7d7536e1ef4c1d175b9bee454" style="width: 100.0%; height: 100.0%;">DFW: Retard Moyen de l'aéroport (TaxiOut): 19.889454083022983 min</div>`)[0];
+                popup_f341b6d16a59cf18d8c36703e14f0d85.setContent(html_de60ede7d7536e1ef4c1d175b9bee454);
+            
+        
+
+        circle_marker_f86fa80bd18787da0c09a996548a455d.bindPopup(popup_f341b6d16a59cf18d8c36703e14f0d85)
+        ;
+
+        
+    
+    
+            var circle_marker_83de2ab7f0d2d87aa25975851e23e080 = L.circleMarker(
+                [29.6454, -95.2789],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.670669849321199, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_001d1588b7b4b5768f44f5783d0ad493 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc62d2bd6af4989c874d9d8fb360b881 = $(`<div id="html_bc62d2bd6af4989c874d9d8fb360b881" style="width: 100.0%; height: 100.0%;">HOU: Retard Moyen de l'aéroport (TaxiOut): 11.341339698642399 min</div>`)[0];
+                popup_001d1588b7b4b5768f44f5783d0ad493.setContent(html_bc62d2bd6af4989c874d9d8fb360b881);
+            
+        
+
+        circle_marker_83de2ab7f0d2d87aa25975851e23e080.bindPopup(popup_001d1588b7b4b5768f44f5783d0ad493)
+        ;
+
+        
+    
+    
+            var circle_marker_b567e40c6d8ceaded2cab417b1a02300 = L.circleMarker(
+                [40.6413, -73.7781],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.7561175506381, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_aa24509741859e44ec5993da4628660c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ebf0cf63401565c76b1a5acf39fb0d12 = $(`<div id="html_ebf0cf63401565c76b1a5acf39fb0d12" style="width: 100.0%; height: 100.0%;">JFK: Retard Moyen de l'aéroport (TaxiOut): 41.5122351012762 min</div>`)[0];
+                popup_aa24509741859e44ec5993da4628660c.setContent(html_ebf0cf63401565c76b1a5acf39fb0d12);
+            
+        
+
+        circle_marker_b567e40c6d8ceaded2cab417b1a02300.bindPopup(popup_aa24509741859e44ec5993da4628660c)
+        ;
+
+        
+    
+    
+            var circle_marker_ed7ccd6f5715db16d537781e17973307 = L.circleMarker(
+                [36.084, -115.1537],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.203908815764054, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_4b3cdf1a3f6a609f0f54941a906d2374 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ebf946c5366210f09fafa03b7fde671c = $(`<div id="html_ebf946c5366210f09fafa03b7fde671c" style="width: 100.0%; height: 100.0%;">LAS: Retard Moyen de l'aéroport (TaxiOut): 18.407817631528108 min</div>`)[0];
+                popup_4b3cdf1a3f6a609f0f54941a906d2374.setContent(html_ebf946c5366210f09fafa03b7fde671c);
+            
+        
+
+        circle_marker_ed7ccd6f5715db16d537781e17973307.bindPopup(popup_4b3cdf1a3f6a609f0f54941a906d2374)
+        ;
+
+        
+    
+    
+            var circle_marker_96f4cf688f25109807eea3192fba5361 = L.circleMarker(
+                [33.9416, -118.4085],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.499793449395101, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_7bc08995da952befb751a6aaf2389327 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d29b244ea8a992eefba37bd19bdc8be4 = $(`<div id="html_d29b244ea8a992eefba37bd19bdc8be4" style="width: 100.0%; height: 100.0%;">LAX: Retard Moyen de l'aéroport (TaxiOut): 16.999586898790202 min</div>`)[0];
+                popup_7bc08995da952befb751a6aaf2389327.setContent(html_d29b244ea8a992eefba37bd19bdc8be4);
+            
+        
+
+        circle_marker_96f4cf688f25109807eea3192fba5361.bindPopup(popup_7bc08995da952befb751a6aaf2389327)
+        ;
+
+        
+    
+    
+            var circle_marker_62b697848d8b12f6687710e656232772 = L.circleMarker(
+                [40.7769, -73.874],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.81809840578048, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_8d25b1f20865b8a75f5f580ee0405dca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c9d5e541039ff02f36fa1233fae969e4 = $(`<div id="html_c9d5e541039ff02f36fa1233fae969e4" style="width: 100.0%; height: 100.0%;">LGA: Retard Moyen de l'aéroport (TaxiOut): 33.63619681156096 min</div>`)[0];
+                popup_8d25b1f20865b8a75f5f580ee0405dca.setContent(html_c9d5e541039ff02f36fa1233fae969e4);
+            
+        
+
+        circle_marker_62b697848d8b12f6687710e656232772.bindPopup(popup_8d25b1f20865b8a75f5f580ee0405dca)
+        ;
+
+        
+    
+    
+            var circle_marker_8a59f8ed67beedf60a6f12594211ad3d = L.circleMarker(
+                [28.4294, -81.3089],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.862580216862138, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_a05ea8c860dbb2624ee1cd5c652a02ea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43ff5c1c8652eb6797a223dbb4090036 = $(`<div id="html_43ff5c1c8652eb6797a223dbb4090036" style="width: 100.0%; height: 100.0%;">MCO: Retard Moyen de l'aéroport (TaxiOut): 17.725160433724277 min</div>`)[0];
+                popup_a05ea8c860dbb2624ee1cd5c652a02ea.setContent(html_43ff5c1c8652eb6797a223dbb4090036);
+            
+        
+
+        circle_marker_8a59f8ed67beedf60a6f12594211ad3d.bindPopup(popup_a05ea8c860dbb2624ee1cd5c652a02ea)
+        ;
+
+        
+    
+    
+            var circle_marker_2499d54d669ffa0de5d8fbe78aee6b22 = L.circleMarker(
+                [41.7868, -87.7522],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.493024254131788, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_8353c63a5a40c578ae305a8899f17999 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e8fd9e5d59df6a702f745399ad590a9b = $(`<div id="html_e8fd9e5d59df6a702f745399ad590a9b" style="width: 100.0%; height: 100.0%;">MDW: Retard Moyen de l'aéroport (TaxiOut): 14.986048508263575 min</div>`)[0];
+                popup_8353c63a5a40c578ae305a8899f17999.setContent(html_e8fd9e5d59df6a702f745399ad590a9b);
+            
+        
+
+        circle_marker_2499d54d669ffa0de5d8fbe78aee6b22.bindPopup(popup_8353c63a5a40c578ae305a8899f17999)
+        ;
+
+        
+    
+    
+            var circle_marker_23ce417cf515b5d437a7a4dc6814d53a = L.circleMarker(
+                [25.7959, -80.2871],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.174040511727078, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_b84767c6949e0fdf0aa8397c2a229c0a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_43561edfea37b97fe8b757e215dcaa98 = $(`<div id="html_43561edfea37b97fe8b757e215dcaa98" style="width: 100.0%; height: 100.0%;">MIA: Retard Moyen de l'aéroport (TaxiOut): 20.348081023454156 min</div>`)[0];
+                popup_b84767c6949e0fdf0aa8397c2a229c0a.setContent(html_43561edfea37b97fe8b757e215dcaa98);
+            
+        
+
+        circle_marker_23ce417cf515b5d437a7a4dc6814d53a.bindPopup(popup_b84767c6949e0fdf0aa8397c2a229c0a)
+        ;
+
+        
+    
+    
+            var circle_marker_fbacac8ea886c08562da5a3284f058c4 = L.circleMarker(
+                [41.9742, -87.9073],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.710576206198743, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_3e8beb5ac0b03481a5583fdd63cc0e87 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_825db8e6ca69a8aa50509f9106b1b528 = $(`<div id="html_825db8e6ca69a8aa50509f9106b1b528" style="width: 100.0%; height: 100.0%;">ORD: Retard Moyen de l'aéroport (TaxiOut): 23.421152412397486 min</div>`)[0];
+                popup_3e8beb5ac0b03481a5583fdd63cc0e87.setContent(html_825db8e6ca69a8aa50509f9106b1b528);
+            
+        
+
+        circle_marker_fbacac8ea886c08562da5a3284f058c4.bindPopup(popup_3e8beb5ac0b03481a5583fdd63cc0e87)
+        ;
+
+        
+    
+    
+            var circle_marker_bde9926600d4c5b2f23d18a0a03a269c = L.circleMarker(
+                [39.8719, -75.2411],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.995092242194891, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_bc3cf98eca52ea5e021a4d72ab6742e1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67c4d91d88a9b40831797a8afa746266 = $(`<div id="html_67c4d91d88a9b40831797a8afa746266" style="width: 100.0%; height: 100.0%;">PHL: Retard Moyen de l'aéroport (TaxiOut): 29.990184484389783 min</div>`)[0];
+                popup_bc3cf98eca52ea5e021a4d72ab6742e1.setContent(html_67c4d91d88a9b40831797a8afa746266);
+            
+        
+
+        circle_marker_bde9926600d4c5b2f23d18a0a03a269c.bindPopup(popup_bc3cf98eca52ea5e021a4d72ab6742e1)
+        ;
+
+        
+    
+    
+            var circle_marker_82d3d77935cb83e07c14698abbb48dab = L.circleMarker(
+                [33.4343, -112.0116],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.704245657031644, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_aab9325ab7a46ba63d93d3198940f91b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5716c4d9002a59f960c6b0c0c600c9bc = $(`<div id="html_5716c4d9002a59f960c6b0c0c600c9bc" style="width: 100.0%; height: 100.0%;">PHX: Retard Moyen de l'aéroport (TaxiOut): 15.408491314063289 min</div>`)[0];
+                popup_aab9325ab7a46ba63d93d3198940f91b.setContent(html_5716c4d9002a59f960c6b0c0c600c9bc);
+            
+        
+
+        circle_marker_82d3d77935cb83e07c14698abbb48dab.bindPopup(popup_aab9325ab7a46ba63d93d3198940f91b)
+        ;
+
+        
+    
+    
+            var circle_marker_5f7fb2eaa0305f022258dc803e765754 = L.circleMarker(
+                [32.7338, -117.1933],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.569390848952591, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_3ba6ebe45d554cf3f221a4754d9a692e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_72e1123aa5c4acb0a6401e6f450ac6fe = $(`<div id="html_72e1123aa5c4acb0a6401e6f450ac6fe" style="width: 100.0%; height: 100.0%;">SAN: Retard Moyen de l'aéroport (TaxiOut): 15.138781697905182 min</div>`)[0];
+                popup_3ba6ebe45d554cf3f221a4754d9a692e.setContent(html_72e1123aa5c4acb0a6401e6f450ac6fe);
+            
+        
+
+        circle_marker_5f7fb2eaa0305f022258dc803e765754.bindPopup(popup_3ba6ebe45d554cf3f221a4754d9a692e)
+        ;
+
+        
+    
+    
+            var circle_marker_61f8b614ba6d71440172894660ae1a69 = L.circleMarker(
+                [47.4502, -122.3088],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.70228475898579, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_b9193e87da48b3201bc625fc2d9e2d5d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a36ba53310e17f07f637bc862223118c = $(`<div id="html_a36ba53310e17f07f637bc862223118c" style="width: 100.0%; height: 100.0%;">SEA: Retard Moyen de l'aéroport (TaxiOut): 17.40456951797158 min</div>`)[0];
+                popup_b9193e87da48b3201bc625fc2d9e2d5d.setContent(html_a36ba53310e17f07f637bc862223118c);
+            
+        
+
+        circle_marker_61f8b614ba6d71440172894660ae1a69.bindPopup(popup_b9193e87da48b3201bc625fc2d9e2d5d)
+        ;
+
+        
+    
+    
+            var circle_marker_6cddce7ba93c688854bfc0ca8f1d7b4a = L.circleMarker(
+                [37.6213, -122.379],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.798859368479622, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_37be3da52867a613cf082770e073404a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_73ffc234e093514b410eb4829ad7f351 = $(`<div id="html_73ffc234e093514b410eb4829ad7f351" style="width: 100.0%; height: 100.0%;">SFO: Retard Moyen de l'aéroport (TaxiOut): 19.597718736959244 min</div>`)[0];
+                popup_37be3da52867a613cf082770e073404a.setContent(html_73ffc234e093514b410eb4829ad7f351);
+            
+        
+
+        circle_marker_6cddce7ba93c688854bfc0ca8f1d7b4a.bindPopup(popup_37be3da52867a613cf082770e073404a)
+        ;
+
+        
+    
+    
+            var circle_marker_55cc47b940a960053feb61a952a4ffa4 = L.circleMarker(
+                [40.7899, -111.9791],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.16829489946609, "stroke": true, "weight": 3}
+            ).addTo(map_077e2623ebae16b18000dcad7df9b5a8);
+        
+    
+        var popup_a73eb0fbfa1c4dec3782fd4cbb553d04 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9cd19aa2844d2c497cd35ac7e0569252 = $(`<div id="html_9cd19aa2844d2c497cd35ac7e0569252" style="width: 100.0%; height: 100.0%;">SLC: Retard Moyen de l'aéroport (TaxiOut): 22.33658979893218 min</div>`)[0];
+                popup_a73eb0fbfa1c4dec3782fd4cbb553d04.setContent(html_9cd19aa2844d2c497cd35ac7e0569252);
+            
+        
+
+        circle_marker_55cc47b940a960053feb61a952a4ffa4.bindPopup(popup_a73eb0fbfa1c4dec3782fd4cbb553d04)
+        ;
+
+        
+    
+</script>
+</html>
