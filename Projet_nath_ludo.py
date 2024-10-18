@@ -11,8 +11,9 @@ import dash
 import json
 
 # Charger le fichier CSV
-file_path = 'Flight_delay.csv'  # Remplacez par le chemin correct si nécessaire
+file_path = 'data//raw//Flight_delay.csv'  # Remplacez par le chemin correct si nécessaire
 df = pd.read_csv(file_path)
+
 
 #Nettoyer les données
 print("Donnée manquante au total: ")
@@ -74,6 +75,7 @@ df_top_40 = df_Final[df_Final['Org_Airport'].isin(top_40_airports)]
 avg_taxiout_by_airport = df_top_40.groupby('Origin')['TaxiOut'].mean().reset_index()
 avg_taxiout_by_airport['TaxiOut'] = avg_taxiout_by_airport['TaxiOut'].round(2)
 #print(avg_taxiout_by_airport)
+
 
 
 
@@ -181,12 +183,12 @@ legend_html =  """
 map.get_root().html.add_child(folium.Element(legend_html))
 
 # Sauvegarder la carte
-map.save(outfile='airport_taxiout_circlemarker_with_legend.html')
+map.save(outfile='carte_choroplèthe.html')
 
 plt.hist(df_Final['Distance'], bins=30, color='purple', edgecolor='black')
 plt.title("Distribution des Distances des Vols")
 plt.xlabel("Distance (miles)")
 plt.ylabel("Nombre de Vols")
-plt.xlim(0, 5000) 
+plt.xlim(0, 4600) 
 plt.show()
 

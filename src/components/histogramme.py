@@ -1,0 +1,6 @@
+plt.hist(df_Final['Distance'], bins=30, color='purple', edgecolor='black')
+plt.title("Distribution des Distances des Vols")
+plt.xlabel("Distance (miles)")
+plt.ylabel("Nombre de Vols")
+plt.xlim(0, 5000) 
+plt.show()

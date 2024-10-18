@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_966614a5f9c673440b981805c95a40e0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+     <h3 align="center" style="font-size:20px; font-weight: bold;">Temps moyen d'un décollage après embarquement par aéroport(TaxiOut)</h3>
+     
+    
+     <div style="position: fixed; 
+                 bottom: 50px; left: 50px; width: 160px; height: auto;
+                 border:2px solid grey; z-index:9999; font-size:14px;
+                 background-color: white;
+                 opacity: 0.9; padding: 10px; border-radius: 5px;">
+     <b>Légende</b><br>
+     <span style="display: inline-block; 
+                  width: 20px; height: 20px; background: green; 
+                  border-radius: 50%;"></span>&nbsp; Moins de 15 min<br>
+     <span style="display: inline-block; 
+                  width: 20px; height: 20px; background: yellow; 
+                  border-radius: 50%;"></span>&nbsp; 15-20 min<br>
+     <span style="display: inline-block; 
+                  width: 20px; height: 20px; background: orange; 
+                  border-radius: 50%;"></span>&nbsp; 20-30 min<br>
+     <span style="display: inline-block; 
+                  width: 20px; height: 20px; background: red; 
+                  border-radius: 50%;"></span>&nbsp; Plus de 30 min<br>
+     </div>
+     
+    
+            <div class="folium-map" id="map_966614a5f9c673440b981805c95a40e0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_966614a5f9c673440b981805c95a40e0 = L.map(
+                "map_966614a5f9c673440b981805c95a40e0",
+                {
+                    center: [39.8283, -98.5795],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5e56bbb93059d1d082be2affdb2b49ba = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_5e56bbb93059d1d082be2affdb2b49ba.addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+            var circle_marker_6ce03c6377855ea7eb477282b58d5a10 = L.circleMarker(
+                [35.0402, -106.609],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_5d689583d901d743f7ad9a75725028e1 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5125876ccae0adf0f84f754fef0ee6c3 = $(`<div id="html_5125876ccae0adf0f84f754fef0ee6c3" style="width: 100.0%; height: 100.0%;">Aéroport: ABQ<br>Temps moyen d'un décollage après embarquement total: 11.25 min</div>`)[0];
+                popup_5d689583d901d743f7ad9a75725028e1.setContent(html_5125876ccae0adf0f84f754fef0ee6c3);
+            
+        
+
+        circle_marker_6ce03c6377855ea7eb477282b58d5a10.bindPopup(popup_5d689583d901d743f7ad9a75725028e1)
+        ;
+
+        
+    
+    
+            var circle_marker_604bb615a9d0015d31b2ebcab3659860 = L.circleMarker(
+                [33.6407, -84.4277],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_ab0cd8c072021597529c75df121374ac = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e4d42580708af4653814a581cc11bcb5 = $(`<div id="html_e4d42580708af4653814a581cc11bcb5" style="width: 100.0%; height: 100.0%;">Aéroport: ATL<br>Temps moyen d'un décollage après embarquement total: 24.05 min</div>`)[0];
+                popup_ab0cd8c072021597529c75df121374ac.setContent(html_e4d42580708af4653814a581cc11bcb5);
+            
+        
+
+        circle_marker_604bb615a9d0015d31b2ebcab3659860.bindPopup(popup_ab0cd8c072021597529c75df121374ac)
+        ;
+
+        
+    
+    
+            var circle_marker_aa81fb71dd78110266c537a99b2a5bf9 = L.circleMarker(
+                [30.1975, -97.6664],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_ccd8cd8ebf99df4c7e43ca958012de0a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f02110be586eb8fc38e5ca1546a5dcd7 = $(`<div id="html_f02110be586eb8fc38e5ca1546a5dcd7" style="width: 100.0%; height: 100.0%;">Aéroport: AUS<br>Temps moyen d'un décollage après embarquement total: 13.13 min</div>`)[0];
+                popup_ccd8cd8ebf99df4c7e43ca958012de0a.setContent(html_f02110be586eb8fc38e5ca1546a5dcd7);
+            
+        
+
+        circle_marker_aa81fb71dd78110266c537a99b2a5bf9.bindPopup(popup_ccd8cd8ebf99df4c7e43ca958012de0a)
+        ;
+
+        
+    
+    
+            var circle_marker_23ee4a10c99e36adb61a59ffa50a475f = L.circleMarker(
+                [36.1263, -86.6774],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_94b814e6b4865ac96c61fa8ffb9fb7e0 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_8bc4c8a9e1af8c2f34dfcf7b4949daea = $(`<div id="html_8bc4c8a9e1af8c2f34dfcf7b4949daea" style="width: 100.0%; height: 100.0%;">Aéroport: BNA<br>Temps moyen d'un décollage après embarquement total: 12.69 min</div>`)[0];
+                popup_94b814e6b4865ac96c61fa8ffb9fb7e0.setContent(html_8bc4c8a9e1af8c2f34dfcf7b4949daea);
+            
+        
+
+        circle_marker_23ee4a10c99e36adb61a59ffa50a475f.bindPopup(popup_94b814e6b4865ac96c61fa8ffb9fb7e0)
+        ;
+
+        
+    
+    
+            var circle_marker_5b409e16a0e13d3351ced9462219e213 = L.circleMarker(
+                [42.3656, -71.0096],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_993aab887bcbd6585481dc8e08bfe083 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_fc989588415e7e4cebbefc7ebaad06f7 = $(`<div id="html_fc989588415e7e4cebbefc7ebaad06f7" style="width: 100.0%; height: 100.0%;">Aéroport: BOS<br>Temps moyen d'un décollage après embarquement total: 22.64 min</div>`)[0];
+                popup_993aab887bcbd6585481dc8e08bfe083.setContent(html_fc989588415e7e4cebbefc7ebaad06f7);
+            
+        
+
+        circle_marker_5b409e16a0e13d3351ced9462219e213.bindPopup(popup_993aab887bcbd6585481dc8e08bfe083)
+        ;
+
+        
+    
+    
+            var circle_marker_e07a35f69d63a1d92296ae0ea2e9eabc = L.circleMarker(
+                [39.1754, -76.6684],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_ae32e15279f31dae7ef446ea0b3fec6c = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_61d667151a7269ada0ac4271c427cc16 = $(`<div id="html_61d667151a7269ada0ac4271c427cc16" style="width: 100.0%; height: 100.0%;">Aéroport: BWI<br>Temps moyen d'un décollage après embarquement total: 14.43 min</div>`)[0];
+                popup_ae32e15279f31dae7ef446ea0b3fec6c.setContent(html_61d667151a7269ada0ac4271c427cc16);
+            
+        
+
+        circle_marker_e07a35f69d63a1d92296ae0ea2e9eabc.bindPopup(popup_ae32e15279f31dae7ef446ea0b3fec6c)
+        ;
+
+        
+    
+    
+            var circle_marker_934ccb2dc5508dd501082cba27bc1e3b = L.circleMarker(
+                [35.214, -80.9431],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_a67ae10ea38c3daa27bd444c02e40f83 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_bb36c6d51483a89d7f831e4a7c66a012 = $(`<div id="html_bb36c6d51483a89d7f831e4a7c66a012" style="width: 100.0%; height: 100.0%;">Aéroport: CLT<br>Temps moyen d'un décollage après embarquement total: 24.68 min</div>`)[0];
+                popup_a67ae10ea38c3daa27bd444c02e40f83.setContent(html_bb36c6d51483a89d7f831e4a7c66a012);
+            
+        
+
+        circle_marker_934ccb2dc5508dd501082cba27bc1e3b.bindPopup(popup_a67ae10ea38c3daa27bd444c02e40f83)
+        ;
+
+        
+    
+    
+            var circle_marker_8d07dc89f7c63491dd966e75af6fa118 = L.circleMarker(
+                [32.8471, -96.8517],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_914711b8eb1f4201465937d12900b8f6 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f6c5b6a10d810f64e2aa751650ca0e9e = $(`<div id="html_f6c5b6a10d810f64e2aa751650ca0e9e" style="width: 100.0%; height: 100.0%;">Aéroport: DAL<br>Temps moyen d'un décollage après embarquement total: 12.04 min</div>`)[0];
+                popup_914711b8eb1f4201465937d12900b8f6.setContent(html_f6c5b6a10d810f64e2aa751650ca0e9e);
+            
+        
+
+        circle_marker_8d07dc89f7c63491dd966e75af6fa118.bindPopup(popup_914711b8eb1f4201465937d12900b8f6)
+        ;
+
+        
+    
+    
+            var circle_marker_642cb027605d266687489a59ed067979 = L.circleMarker(
+                [38.8512, -77.0402],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_0b3dda352581a462549cb8ad8c256aa9 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_29f077121a907ea24014445f7bd3b696 = $(`<div id="html_29f077121a907ea24014445f7bd3b696" style="width: 100.0%; height: 100.0%;">Aéroport: DCA<br>Temps moyen d'un décollage après embarquement total: 23.17 min</div>`)[0];
+                popup_0b3dda352581a462549cb8ad8c256aa9.setContent(html_29f077121a907ea24014445f7bd3b696);
+            
+        
+
+        circle_marker_642cb027605d266687489a59ed067979.bindPopup(popup_0b3dda352581a462549cb8ad8c256aa9)
+        ;
+
+        
+    
+    
+            var circle_marker_7bb578b231d240e3f78166a5f4f4c22c = L.circleMarker(
+                [39.8561, -104.6737],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_c150e7d6138ce8107d93dc23d591c647 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d33e50fa3c1f4f935011cd2300cd63ca = $(`<div id="html_d33e50fa3c1f4f935011cd2300cd63ca" style="width: 100.0%; height: 100.0%;">Aéroport: DEN<br>Temps moyen d'un décollage après embarquement total: 18.44 min</div>`)[0];
+                popup_c150e7d6138ce8107d93dc23d591c647.setContent(html_d33e50fa3c1f4f935011cd2300cd63ca);
+            
+        
+
+        circle_marker_7bb578b231d240e3f78166a5f4f4c22c.bindPopup(popup_c150e7d6138ce8107d93dc23d591c647)
+        ;
+
+        
+    
+    
+            var circle_marker_9b7c7d79b7bd0012d4b16bd0742a80b3 = L.circleMarker(
+                [32.8998, -97.0403],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_90ec1dccda67a4f72e0520f159cb6593 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_644d6d26babc4b0dc432178e19a348d2 = $(`<div id="html_644d6d26babc4b0dc432178e19a348d2" style="width: 100.0%; height: 100.0%;">Aéroport: DFW<br>Temps moyen d'un décollage après embarquement total: 19.89 min</div>`)[0];
+                popup_90ec1dccda67a4f72e0520f159cb6593.setContent(html_644d6d26babc4b0dc432178e19a348d2);
+            
+        
+
+        circle_marker_9b7c7d79b7bd0012d4b16bd0742a80b3.bindPopup(popup_90ec1dccda67a4f72e0520f159cb6593)
+        ;
+
+        
+    
+    
+            var circle_marker_fc6926c0763b49901374d5ae8557c71c = L.circleMarker(
+                [40.6895, -74.1745],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_c348c64e40563ea34a275b730971dde7 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_01aad58142e2fd4baa56b0ce8bf4353c = $(`<div id="html_01aad58142e2fd4baa56b0ce8bf4353c" style="width: 100.0%; height: 100.0%;">Aéroport: EWR<br>Temps moyen d'un décollage après embarquement total: 30.61 min</div>`)[0];
+                popup_c348c64e40563ea34a275b730971dde7.setContent(html_01aad58142e2fd4baa56b0ce8bf4353c);
+            
+        
+
+        circle_marker_fc6926c0763b49901374d5ae8557c71c.bindPopup(popup_c348c64e40563ea34a275b730971dde7)
+        ;
+
+        
+    
+    
+            var circle_marker_7074a28aa1ef899b36588109b86e2463 = L.circleMarker(
+                [26.0726, -80.1527],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_3a313ba1842a284a4a8f438868884776 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_8e3fa50060b40793e54ea74d5dafbf66 = $(`<div id="html_8e3fa50060b40793e54ea74d5dafbf66" style="width: 100.0%; height: 100.0%;">Aéroport: FLL<br>Temps moyen d'un décollage après embarquement total: 24.13 min</div>`)[0];
+                popup_3a313ba1842a284a4a8f438868884776.setContent(html_8e3fa50060b40793e54ea74d5dafbf66);
+            
+        
+
+        circle_marker_7074a28aa1ef899b36588109b86e2463.bindPopup(popup_3a313ba1842a284a4a8f438868884776)
+        ;
+
+        
+    
+    
+            var circle_marker_e4ba5d706c22caa86b2f18b559340f73 = L.circleMarker(
+                [29.6454, -95.2789],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_a9019251e237962d35bbd37bac06caa9 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5f54fb264b77a587d325edff79a187bd = $(`<div id="html_5f54fb264b77a587d325edff79a187bd" style="width: 100.0%; height: 100.0%;">Aéroport: HOU<br>Temps moyen d'un décollage après embarquement total: 11.34 min</div>`)[0];
+                popup_a9019251e237962d35bbd37bac06caa9.setContent(html_5f54fb264b77a587d325edff79a187bd);
+            
+        
+
+        circle_marker_e4ba5d706c22caa86b2f18b559340f73.bindPopup(popup_a9019251e237962d35bbd37bac06caa9)
+        ;
+
+        
+    
+    
+            var circle_marker_92133cdf4588ccdc8ce6a5fad174b9c0 = L.circleMarker(
+                [38.9531, -77.4565],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_0c35e5dc9b8bc966b995c0827720c755 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_fa69378890c8b58dff45122990ea25f0 = $(`<div id="html_fa69378890c8b58dff45122990ea25f0" style="width: 100.0%; height: 100.0%;">Aéroport: IAD<br>Temps moyen d'un décollage après embarquement total: 24.4 min</div>`)[0];
+                popup_0c35e5dc9b8bc966b995c0827720c755.setContent(html_fa69378890c8b58dff45122990ea25f0);
+            
+        
+
+        circle_marker_92133cdf4588ccdc8ce6a5fad174b9c0.bindPopup(popup_0c35e5dc9b8bc966b995c0827720c755)
+        ;
+
+        
+    
+    
+            var circle_marker_7358e3dd25c59d1d8f679b6a8e0ec5ee = L.circleMarker(
+                [40.6413, -73.7781],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.755, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_2dceb46028fbc8fa84e750f1fafc64a3 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_371ce54e6ad606380e3338c074829f51 = $(`<div id="html_371ce54e6ad606380e3338c074829f51" style="width: 100.0%; height: 100.0%;">Aéroport: JFK<br>Temps moyen d'un décollage après embarquement total: 41.51 min</div>`)[0];
+                popup_2dceb46028fbc8fa84e750f1fafc64a3.setContent(html_371ce54e6ad606380e3338c074829f51);
+            
+        
+
+        circle_marker_7358e3dd25c59d1d8f679b6a8e0ec5ee.bindPopup(popup_2dceb46028fbc8fa84e750f1fafc64a3)
+        ;
+
+        
+    
+    
+            var circle_marker_d8e980b74d23be99bb8b6fc6fab8804a = L.circleMarker(
+                [36.084, -115.1537],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_99c55dfe01fa0ff36c05a051c47a2505 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_60d85ab5d1cd2c6a7935151b7f35feeb = $(`<div id="html_60d85ab5d1cd2c6a7935151b7f35feeb" style="width: 100.0%; height: 100.0%;">Aéroport: LAS<br>Temps moyen d'un décollage après embarquement total: 18.41 min</div>`)[0];
+                popup_99c55dfe01fa0ff36c05a051c47a2505.setContent(html_60d85ab5d1cd2c6a7935151b7f35feeb);
+            
+        
+
+        circle_marker_d8e980b74d23be99bb8b6fc6fab8804a.bindPopup(popup_99c55dfe01fa0ff36c05a051c47a2505)
+        ;
+
+        
+    
+    
+            var circle_marker_4bd8aa92defa300b25aadab6473754f5 = L.circleMarker(
+                [33.9416, -118.4085],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_1c931e1224db9b1e17ca85f2eb7332d9 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_3ff0e894e87977599ee1bf7e5cc2f42c = $(`<div id="html_3ff0e894e87977599ee1bf7e5cc2f42c" style="width: 100.0%; height: 100.0%;">Aéroport: LAX<br>Temps moyen d'un décollage après embarquement total: 17.0 min</div>`)[0];
+                popup_1c931e1224db9b1e17ca85f2eb7332d9.setContent(html_3ff0e894e87977599ee1bf7e5cc2f42c);
+            
+        
+
+        circle_marker_4bd8aa92defa300b25aadab6473754f5.bindPopup(popup_1c931e1224db9b1e17ca85f2eb7332d9)
+        ;
+
+        
+    
+    
+            var circle_marker_2cfe71aa845436fc4df4a2a77cf53316 = L.circleMarker(
+                [40.7769, -73.874],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_06a690e7cb91aa9302a3c0cac4d40ef6 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_8313127c79ce1c663d8607efc29ea989 = $(`<div id="html_8313127c79ce1c663d8607efc29ea989" style="width: 100.0%; height: 100.0%;">Aéroport: LGA<br>Temps moyen d'un décollage après embarquement total: 33.64 min</div>`)[0];
+                popup_06a690e7cb91aa9302a3c0cac4d40ef6.setContent(html_8313127c79ce1c663d8607efc29ea989);
+            
+        
+
+        circle_marker_2cfe71aa845436fc4df4a2a77cf53316.bindPopup(popup_06a690e7cb91aa9302a3c0cac4d40ef6)
+        ;
+
+        
+    
+    
+            var circle_marker_fde9be5b5dc504f6acdfefea305c7876 = L.circleMarker(
+                [39.2976, -94.7139],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_2c1c79644348d4424893aba076fe46bb = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_0f4e2d39ab9a8f959031f202fab68bed = $(`<div id="html_0f4e2d39ab9a8f959031f202fab68bed" style="width: 100.0%; height: 100.0%;">Aéroport: MCI<br>Temps moyen d'un décollage après embarquement total: 13.36 min</div>`)[0];
+                popup_2c1c79644348d4424893aba076fe46bb.setContent(html_0f4e2d39ab9a8f959031f202fab68bed);
+            
+        
+
+        circle_marker_fde9be5b5dc504f6acdfefea305c7876.bindPopup(popup_2c1c79644348d4424893aba076fe46bb)
+        ;
+
+        
+    
+    
+            var circle_marker_7aaf0c739de5cfad3331ff8ce7c21965 = L.circleMarker(
+                [28.4294, -81.3089],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_a2d73c8e7b15729f000fe923dd61f8cb = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_4e31447fa48b9c3441de4fef34ffa5c1 = $(`<div id="html_4e31447fa48b9c3441de4fef34ffa5c1" style="width: 100.0%; height: 100.0%;">Aéroport: MCO<br>Temps moyen d'un décollage après embarquement total: 17.73 min</div>`)[0];
+                popup_a2d73c8e7b15729f000fe923dd61f8cb.setContent(html_4e31447fa48b9c3441de4fef34ffa5c1);
+            
+        
+
+        circle_marker_7aaf0c739de5cfad3331ff8ce7c21965.bindPopup(popup_a2d73c8e7b15729f000fe923dd61f8cb)
+        ;
+
+        
+    
+    
+            var circle_marker_22aba1f90690967d0802dce332c9096c = L.circleMarker(
+                [41.7868, -87.7522],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_eafb37e10f5fdc0666b1ba8f94704f88 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_4ae2b8a522dad22392e73fc7093e1c78 = $(`<div id="html_4ae2b8a522dad22392e73fc7093e1c78" style="width: 100.0%; height: 100.0%;">Aéroport: MDW<br>Temps moyen d'un décollage après embarquement total: 14.99 min</div>`)[0];
+                popup_eafb37e10f5fdc0666b1ba8f94704f88.setContent(html_4ae2b8a522dad22392e73fc7093e1c78);
+            
+        
+
+        circle_marker_22aba1f90690967d0802dce332c9096c.bindPopup(popup_eafb37e10f5fdc0666b1ba8f94704f88)
+        ;
+
+        
+    
+    
+            var circle_marker_870d0dfa729ea445fdb28dfd6b22c280 = L.circleMarker(
+                [25.7959, -80.2871],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_fdf29d83f219a2c873bb91e03b66ccc9 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2bde9384dc878f05644f6706ad6804ca = $(`<div id="html_2bde9384dc878f05644f6706ad6804ca" style="width: 100.0%; height: 100.0%;">Aéroport: MIA<br>Temps moyen d'un décollage après embarquement total: 20.35 min</div>`)[0];
+                popup_fdf29d83f219a2c873bb91e03b66ccc9.setContent(html_2bde9384dc878f05644f6706ad6804ca);
+            
+        
+
+        circle_marker_870d0dfa729ea445fdb28dfd6b22c280.bindPopup(popup_fdf29d83f219a2c873bb91e03b66ccc9)
+        ;
+
+        
+    
+    
+            var circle_marker_2b942f3d1435d4ff2c6d64dd67dc8320 = L.circleMarker(
+                [42.9477, -87.8966],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_80b2f69b82b32b24a3f8f9c6f55d8bed = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_79c019755646dd863d46a9d4c98deccb = $(`<div id="html_79c019755646dd863d46a9d4c98deccb" style="width: 100.0%; height: 100.0%;">Aéroport: MKE<br>Temps moyen d'un décollage après embarquement total: 20.19 min</div>`)[0];
+                popup_80b2f69b82b32b24a3f8f9c6f55d8bed.setContent(html_79c019755646dd863d46a9d4c98deccb);
+            
+        
+
+        circle_marker_2b942f3d1435d4ff2c6d64dd67dc8320.bindPopup(popup_80b2f69b82b32b24a3f8f9c6f55d8bed)
+        ;
+
+        
+    
+    
+            var circle_marker_ac3a3920cc5d2027654db2ce477b7be4 = L.circleMarker(
+                [37.7213, -122.2214],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_fe0408e816d16127b0421b562854dfdb = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_21d86d7853b15099532a946c59f9e23b = $(`<div id="html_21d86d7853b15099532a946c59f9e23b" style="width: 100.0%; height: 100.0%;">Aéroport: OAK<br>Temps moyen d'un décollage après embarquement total: 11.09 min</div>`)[0];
+                popup_fe0408e816d16127b0421b562854dfdb.setContent(html_21d86d7853b15099532a946c59f9e23b);
+            
+        
+
+        circle_marker_ac3a3920cc5d2027654db2ce477b7be4.bindPopup(popup_fe0408e816d16127b0421b562854dfdb)
+        ;
+
+        
+    
+    
+            var circle_marker_43e94cf1aac21dc98b0596afe3881c9e = L.circleMarker(
+                [41.9742, -87.9073],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_141d3af331b396147231a4bc86bd311f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_b1e2d3311fd18ddd078744c782503c79 = $(`<div id="html_b1e2d3311fd18ddd078744c782503c79" style="width: 100.0%; height: 100.0%;">Aéroport: ORD<br>Temps moyen d'un décollage après embarquement total: 23.42 min</div>`)[0];
+                popup_141d3af331b396147231a4bc86bd311f.setContent(html_b1e2d3311fd18ddd078744c782503c79);
+            
+        
+
+        circle_marker_43e94cf1aac21dc98b0596afe3881c9e.bindPopup(popup_141d3af331b396147231a4bc86bd311f)
+        ;
+
+        
+    
+    
+            var circle_marker_2d9b49b9d3b0651f02004e8d00ca7728 = L.circleMarker(
+                [45.5898, -122.5951],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_84eb1c52b9853f1986e29bb1754d0eb2 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_650d4ddaf97805d035ebcfc316e2cbc9 = $(`<div id="html_650d4ddaf97805d035ebcfc316e2cbc9" style="width: 100.0%; height: 100.0%;">Aéroport: PDX<br>Temps moyen d'un décollage après embarquement total: 11.97 min</div>`)[0];
+                popup_84eb1c52b9853f1986e29bb1754d0eb2.setContent(html_650d4ddaf97805d035ebcfc316e2cbc9);
+            
+        
+
+        circle_marker_2d9b49b9d3b0651f02004e8d00ca7728.bindPopup(popup_84eb1c52b9853f1986e29bb1754d0eb2)
+        ;
+
+        
+    
+    
+            var circle_marker_1a4db37ec4c4ff7c5fe2bd3227f206ae = L.circleMarker(
+                [39.8719, -75.2411],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_bfe087737b2d0f12a407182987afe28c = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_0427c5144d4c93fd25b29f15ad34e492 = $(`<div id="html_0427c5144d4c93fd25b29f15ad34e492" style="width: 100.0%; height: 100.0%;">Aéroport: PHL<br>Temps moyen d'un décollage après embarquement total: 29.99 min</div>`)[0];
+                popup_bfe087737b2d0f12a407182987afe28c.setContent(html_0427c5144d4c93fd25b29f15ad34e492);
+            
+        
+
+        circle_marker_1a4db37ec4c4ff7c5fe2bd3227f206ae.bindPopup(popup_bfe087737b2d0f12a407182987afe28c)
+        ;
+
+        
+    
+    
+            var circle_marker_9ccf6ca486194652bf7f92c3bb184e10 = L.circleMarker(
+                [33.4343, -112.0116],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_e1a43324ec614a41acb391ffc3d97248 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_8bdb57bb963491bab10eb65470b59197 = $(`<div id="html_8bdb57bb963491bab10eb65470b59197" style="width: 100.0%; height: 100.0%;">Aéroport: PHX<br>Temps moyen d'un décollage après embarquement total: 15.41 min</div>`)[0];
+                popup_e1a43324ec614a41acb391ffc3d97248.setContent(html_8bdb57bb963491bab10eb65470b59197);
+            
+        
+
+        circle_marker_9ccf6ca486194652bf7f92c3bb184e10.bindPopup(popup_e1a43324ec614a41acb391ffc3d97248)
+        ;
+
+        
+    
+    
+            var circle_marker_c99f954e6d9aaaa61d2e94172d9fbd50 = L.circleMarker(
+                [40.4914, -80.2329],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_507fab204ad9b8e3fd669e68e96712e3 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_0ab7d6a3c3e16d8b86e7f3f99342347f = $(`<div id="html_0ab7d6a3c3e16d8b86e7f3f99342347f" style="width: 100.0%; height: 100.0%;">Aéroport: PIT<br>Temps moyen d'un décollage après embarquement total: 19.25 min</div>`)[0];
+                popup_507fab204ad9b8e3fd669e68e96712e3.setContent(html_0ab7d6a3c3e16d8b86e7f3f99342347f);
+            
+        
+
+        circle_marker_c99f954e6d9aaaa61d2e94172d9fbd50.bindPopup(popup_507fab204ad9b8e3fd669e68e96712e3)
+        ;
+
+        
+    
+    
+            var circle_marker_8b897bc23698ec2d1189f7d95cc13211 = L.circleMarker(
+                [35.8776, -78.7875],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_12ecd9eb053721d25890d786734d6d29 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_32f70cc75d7521bf29ed074e27f40e74 = $(`<div id="html_32f70cc75d7521bf29ed074e27f40e74" style="width: 100.0%; height: 100.0%;">Aéroport: RDU<br>Temps moyen d'un décollage après embarquement total: 17.67 min</div>`)[0];
+                popup_12ecd9eb053721d25890d786734d6d29.setContent(html_32f70cc75d7521bf29ed074e27f40e74);
+            
+        
+
+        circle_marker_8b897bc23698ec2d1189f7d95cc13211.bindPopup(popup_12ecd9eb053721d25890d786734d6d29)
+        ;
+
+        
+    
+    
+            var circle_marker_327f4983c7c709594b7cb18289bd61a1 = L.circleMarker(
+                [32.7338, -117.1933],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_b33788a016473cabc2de1a24696c4b7a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_4d80b4afaeb387476b5d3c7d36fbac6d = $(`<div id="html_4d80b4afaeb387476b5d3c7d36fbac6d" style="width: 100.0%; height: 100.0%;">Aéroport: SAN<br>Temps moyen d'un décollage après embarquement total: 15.14 min</div>`)[0];
+                popup_b33788a016473cabc2de1a24696c4b7a.setContent(html_4d80b4afaeb387476b5d3c7d36fbac6d);
+            
+        
+
+        circle_marker_327f4983c7c709594b7cb18289bd61a1.bindPopup(popup_b33788a016473cabc2de1a24696c4b7a)
+        ;
+
+        
+    
+    
+            var circle_marker_cc13d4f2c34de8bbf6d4e506ad337582 = L.circleMarker(
+                [47.4502, -122.3088],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_0007ef78fa67605de7aa681ecc8b80cc = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_eb0ad8a7c59188dc5818979aa318ec3e = $(`<div id="html_eb0ad8a7c59188dc5818979aa318ec3e" style="width: 100.0%; height: 100.0%;">Aéroport: SEA<br>Temps moyen d'un décollage après embarquement total: 17.4 min</div>`)[0];
+                popup_0007ef78fa67605de7aa681ecc8b80cc.setContent(html_eb0ad8a7c59188dc5818979aa318ec3e);
+            
+        
+
+        circle_marker_cc13d4f2c34de8bbf6d4e506ad337582.bindPopup(popup_0007ef78fa67605de7aa681ecc8b80cc)
+        ;
+
+        
+    
+    
+            var circle_marker_3af7b054a62bd3468f8ce9c8755fe761 = L.circleMarker(
+                [37.6213, -122.379],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_3bda6f23b08a36f12ae559dd76ef4b04 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_dc665a46706408672392bb63b624d670 = $(`<div id="html_dc665a46706408672392bb63b624d670" style="width: 100.0%; height: 100.0%;">Aéroport: SFO<br>Temps moyen d'un décollage après embarquement total: 19.6 min</div>`)[0];
+                popup_3bda6f23b08a36f12ae559dd76ef4b04.setContent(html_dc665a46706408672392bb63b624d670);
+            
+        
+
+        circle_marker_3af7b054a62bd3468f8ce9c8755fe761.bindPopup(popup_3bda6f23b08a36f12ae559dd76ef4b04)
+        ;
+
+        
+    
+    
+            var circle_marker_629476b71e3b2b5798a3ddc4a8b60413 = L.circleMarker(
+                [37.3639, -121.929],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_8257914f3197e0277641a854d3858b6e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_462a8e07b31af29b9cd1225083a9f3ab = $(`<div id="html_462a8e07b31af29b9cd1225083a9f3ab" style="width: 100.0%; height: 100.0%;">Aéroport: SJC<br>Temps moyen d'un décollage après embarquement total: 11.77 min</div>`)[0];
+                popup_8257914f3197e0277641a854d3858b6e.setContent(html_462a8e07b31af29b9cd1225083a9f3ab);
+            
+        
+
+        circle_marker_629476b71e3b2b5798a3ddc4a8b60413.bindPopup(popup_8257914f3197e0277641a854d3858b6e)
+        ;
+
+        
+    
+    
+            var circle_marker_9f144d53fd879e77732a76f62e6b34a5 = L.circleMarker(
+                [40.7899, -111.9791],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_a915fa4ef48b26e7c2eee3f11f3f2fbc = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_34b69744cfcaf21d48c65bf5a0a58b06 = $(`<div id="html_34b69744cfcaf21d48c65bf5a0a58b06" style="width: 100.0%; height: 100.0%;">Aéroport: SLC<br>Temps moyen d'un décollage après embarquement total: 22.34 min</div>`)[0];
+                popup_a915fa4ef48b26e7c2eee3f11f3f2fbc.setContent(html_34b69744cfcaf21d48c65bf5a0a58b06);
+            
+        
+
+        circle_marker_9f144d53fd879e77732a76f62e6b34a5.bindPopup(popup_a915fa4ef48b26e7c2eee3f11f3f2fbc)
+        ;
+
+        
+    
+    
+            var circle_marker_38724b48c034d054e49a3b10beea59f5 = L.circleMarker(
+                [38.6951, -121.5908],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_7cffefa9bed9e4882166ef111036c5ff = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_321da28a362b84870c5613052bd4eb5d = $(`<div id="html_321da28a362b84870c5613052bd4eb5d" style="width: 100.0%; height: 100.0%;">Aéroport: SMF<br>Temps moyen d'un décollage après embarquement total: 11.0 min</div>`)[0];
+                popup_7cffefa9bed9e4882166ef111036c5ff.setContent(html_321da28a362b84870c5613052bd4eb5d);
+            
+        
+
+        circle_marker_38724b48c034d054e49a3b10beea59f5.bindPopup(popup_7cffefa9bed9e4882166ef111036c5ff)
+        ;
+
+        
+    
+    
+            var circle_marker_32de863828b43a95836575f0480a248d = L.circleMarker(
+                [33.6757, -117.8678],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_201ab84f88fd2ae56ec3535caa1ce46e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_66f237ff50e6702ddfab1938e7e60d7a = $(`<div id="html_66f237ff50e6702ddfab1938e7e60d7a" style="width: 100.0%; height: 100.0%;">Aéroport: SNA<br>Temps moyen d'un décollage après embarquement total: 14.37 min</div>`)[0];
+                popup_201ab84f88fd2ae56ec3535caa1ce46e.setContent(html_66f237ff50e6702ddfab1938e7e60d7a);
+            
+        
+
+        circle_marker_32de863828b43a95836575f0480a248d.bindPopup(popup_201ab84f88fd2ae56ec3535caa1ce46e)
+        ;
+
+        
+    
+    
+            var circle_marker_e120d5f9a32ce20d1666e2b0a649a8ed = L.circleMarker(
+                [38.7487, -90.37],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_ffe442422f67a94ccfc4da75c97713d6 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_17fc44988fe04d0496f518a6c37ffd8c = $(`<div id="html_17fc44988fe04d0496f518a6c37ffd8c" style="width: 100.0%; height: 100.0%;">Aéroport: STL<br>Temps moyen d'un décollage après embarquement total: 14.06 min</div>`)[0];
+                popup_ffe442422f67a94ccfc4da75c97713d6.setContent(html_17fc44988fe04d0496f518a6c37ffd8c);
+            
+        
+
+        circle_marker_e120d5f9a32ce20d1666e2b0a649a8ed.bindPopup(popup_ffe442422f67a94ccfc4da75c97713d6)
+        ;
+
+        
+    
+    
+            var circle_marker_d5a42ac3c05c5d813cf00c9dd07ddf27 = L.circleMarker(
+                [27.9755, -82.5332],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_966614a5f9c673440b981805c95a40e0);
+        
+    
+        var popup_7d69e2e1ab584adcc81e5b41a7253d78 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_6a1eecf3bb535c799f232be78ef89b0d = $(`<div id="html_6a1eecf3bb535c799f232be78ef89b0d" style="width: 100.0%; height: 100.0%;">Aéroport: TPA<br>Temps moyen d'un décollage après embarquement total: 15.54 min</div>`)[0];
+                popup_7d69e2e1ab584adcc81e5b41a7253d78.setContent(html_6a1eecf3bb535c799f232be78ef89b0d);
+            
+        
+
+        circle_marker_d5a42ac3c05c5d813cf00c9dd07ddf27.bindPopup(popup_7d69e2e1ab584adcc81e5b41a7253d78)
+        ;
+
+        
+    
+</script>
+</html>
