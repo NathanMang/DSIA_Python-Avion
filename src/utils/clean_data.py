@@ -1,5 +1,17 @@
+import pandas as pd
+import plotly.offline as pyo
+import folium
+from folium import Choropleth
+import numpy as np
+import plotly as plt
+import matplotlib.pyplot as plt
+import plotly.express as px
+import seaborn as sns
+import dash
+import json
+
 # Charger le fichier CSV
-file_path = 'Flight_delay.csv'  # Remplacez par le chemin correct si nécessaire
+file_path = 'data//raw//Flight_delay.csv'  # Remplacez par le chemin correct si nécessaire
 df = pd.read_csv(file_path)
 
 #Nettoyer les données
@@ -16,3 +28,5 @@ print(df_Final.shape)
 print(df_Final.dtypes)
 df_Final=pd.DataFrame(df_Final)
 print(df_Final.head())
+
+df.to_csv('data//clean//Flight_Delay_clean.csv', index=False, encoding='utf-8')

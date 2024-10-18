@@ -1,4 +1,16 @@
+import pandas as pd
+import plotly.offline as pyo
+import folium
+from folium import Choropleth
+import numpy as np
+import plotly as plt
+import matplotlib.pyplot as plt
+import plotly.express as px
+import seaborn as sns
+import dash
+import json
 
+df_Final=pd.read_csv('data//clean//Flight_Delay_clean.csv')
 top_40_airports=df_Final['Org_Airport'].value_counts().nlargest(40).index
 df_top_40 = df_Final[df_Final['Org_Airport'].isin(top_40_airports)]
 # Calculer le retard moyen (TaxiOut) par aéroport

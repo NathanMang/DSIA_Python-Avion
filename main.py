@@ -1,11 +1,5 @@
-import pandas as pd
-import plotly.offline as pyo
-import folium
-from folium import Choropleth
-import numpy as np
-import plotly as plt
-import matplotlib.pyplot as plt
-import plotly.express as px
-import seaborn as sns
-import dash
-import json
+from config import *  # Si vous avez des variables de configuration à importer
+from src.components import carte_choroplèthe, histogramme, __init__
+from src.pages import __init__, home
+
+from src.utils import __init__,clean_data
