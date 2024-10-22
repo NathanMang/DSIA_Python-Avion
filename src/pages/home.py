@@ -33,7 +33,7 @@ if __name__ == '__main__':
                             ), # (6)
 
                             dcc.Graph(
-                                id='graph1',
+                                id='graph2',
                                 figure=carte
                             ), # (6)
 

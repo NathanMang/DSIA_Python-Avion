@@ -1,5 +1,6 @@
 import plotly.express as px
 import pandas as pd
+import folium
 
 def creerCart():
     # Exemple de données
@@ -61,20 +62,51 @@ def creerCart():
 
     # Créer la carte avec Plotly Express
     fig = px.scatter_geo(avg_taxiout_by_airport,
-                        lat='lat',
-                        lon='lon',
-                        color='TaxiOut',  # Colorer par le temps moyen de décollage
-                        size='TaxiOut',  # La taille est proportionnelle au temps moyen
-                        hover_name='Origin',  # Ajouter le nom de l'aéroport dans l'infobulle
-                        hover_data={'TaxiOut': True},  # Afficher le temps moyen dans l'infobulle
-                        color_continuous_scale=px.colors.sequential.Reds,  # Palette de couleurs
-                        title="Temps moyen de décollage après embarquement (TaxiOut) par aéroport")
+                         lat='lat',
+                         lon='lon',
+                         size='TaxiOut',  # La taille est proportionnelle au temps moyen
+                         hover_name='Origin',
+                         hover_data={'TaxiOut': True},
+                         title="Temps moyen de décollage après embarquement (TaxiOut) par aéroport")
 
-    # Ajuster les limites de la carte pour se concentrer sur les USA
-    fig.update_geos(projection_type="natural earth", 
-                    showcountries=True, 
-                    countrycolor="lightgray",
-                    lataxis_range=[20, 50],  # Limites pour latitude (USA)
-                    lonaxis_range=[-130, -60])  # Limites pour longitude (USA)
+   
     
+    # Définir la couleur en fonction du temps d'embarquement
+    fig.update_traces(marker=dict(size=avg_taxiout_by_airport['TaxiOut'] * 2,
+                                  color=avg_taxiout_by_airport['TaxiOut'],
+                                  
+                                  colorscale=[
+                                      [0, 'green'],  # Moins de 15 min
+                                      [0.375, 'yellow'],  # Entre 15 et 20 min
+                                      [0.75, 'orange'],  # Entre 20 et 30 min
+                                      [1, 'red']  # Plus de 30 min
+                                  ],
+                                  colorbar=dict(
+                                      title="Temps moyen (minutes)",
+                                      tickvals=[10, 15, 20, 30, 40],
+                                      ticktext=['< 15 min', '15-20 min', '20-30 min', '> 30 min'])
+                                  ))
+
+    # Ajuster les limites de la carte et améliorer l'esthétique
+    fig.update_geos(
+    visible=False, resolution=110, scope="usa",
+    showcountries=True, countrycolor="Black",
+    showsubunits=True, subunitcolor="Blue"
+    )   
+
+    
+          
+    
+    # Ajuster les marges et ajouter un titre
+    fig.update_layout(
+        margin={"r": 0, "t": 50, "l": 0, "b": 0},  # Ajustement des marges
+        title={
+            'text': "Temps moyen d'un décollage après embarquement par aéroport (TaxiOut)",
+            'y': 0.9,  # Position verticale du titre
+            'x': 0.5,  # Centrer le titre
+            'xanchor': 'center',
+            'yanchor': 'top'
+        }
+    )
+
     return fig
