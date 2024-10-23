@@ -1,3 +1,5 @@
+
+
 import pandas as pd
 import plotly.offline as pyo
 import folium
@@ -10,12 +12,12 @@ import seaborn as sns
 import dash
 import json
 
-def creerHist():
+def creerHist(month):
         
     df_Final=pd.read_csv('data//clean//Flight_Delay_clean.csv')
-
+    df_Final['Date'] = pd.to_datetime(df_Final['Date'], format='%d-%m-%Y')
     # Création de l'histogramme avec Plotly Express
-    fig = px.histogram(df_Final, 
+    fig = px.histogram(df_Final[df_Final['Date'].dt.month == month], 
     x='Distance', 
     nbins=40,  # Nombre de bins
     title="Distribution des Distances des Vols",  # Titre du graphique

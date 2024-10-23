@@ -22,11 +22,21 @@ print("Pourcentage de donnée manquante: ")
 print((total_missingValue/df.size)*100)
 df_cleanNA=df.dropna()
 
-df_Final=df_cleanNA.drop(['DayOfWeek','Date','UniqueCarrier','FlightNum','TailNum','Cancelled','CancellationCode','Diverted'],axis=1)
+df_Final=df_cleanNA.drop(['DayOfWeek','UniqueCarrier','FlightNum','TailNum','Cancelled','CancellationCode','Diverted'],axis=1)
 print("Taille du DataFrame nettoyé final")
 print(df_Final.shape)
 print(df_Final.dtypes)
 df_Final=pd.DataFrame(df_Final)
 print(df_Final.head())
 
-df.to_csv('data//clean//Flight_Delay_clean.csv', index=False, encoding='utf-8')
+df_Final.to_csv('data//clean//Flight_Delay_clean.csv', index=False, encoding='utf-8')
+
+CoordAirports = pd.read_csv('data//raw//CoordAirports.csv')
+CoordAirports_filtered=CoordAirports.filter(items=['LOCID', 'LONGITUDE', 'LATITUDE'])
+
+CoordAirports_filtered=pd.DataFrame(CoordAirports_filtered)
+CoordAirports_filtered.to_csv('data//clean//CoordAirportsClean.csv', index=False, encoding='utf-8')
+
+
+
+
