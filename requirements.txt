@@ -1,7 +1,4 @@
 pandas
-plotly
 folium
-numpy
-matplotlib
-seaborn
+plotly
 dash
