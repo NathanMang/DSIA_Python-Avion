@@ -16,7 +16,8 @@ def clean_data():
 
     # Nettoie les données
     df_flight_delay = df_flight_delay.dropna()  # Supprime les lignes contenant des valeurs manquantes
-    df_flight_delay = df_flight_delay.filter(items=['CarrierDelay', 'Airline', 'TaxiOut', 'Origin'])  # Récupère les colonnes nécessaires
+    df_flight_delay = df_flight_delay.filter(items=['CarrierDelay', 'WeatherDelay', 'NASDelay', 'SecurityDelay', 'LateAircraftDelay',
+                                                    'Airline', 'TaxiOut', 'Origin'])  # Récupère les colonnes nécessaires
 
     # Enregistre le DataFrame dans un fichier CSV
     df_flight_delay.to_csv('data//clean//Flight_Delay_Clean.csv', index=False, encoding='utf-8')

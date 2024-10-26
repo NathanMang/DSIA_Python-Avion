@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.express as px
 
-def create_histogram(delay_type='CarrierDelay'):
+def create_histogram(delay_type):
 
     """Création de l'histogramme sur la répartition des distances de vols en fonction du mois"""
 
