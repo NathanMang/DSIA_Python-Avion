@@ -77,6 +77,8 @@ def create_router_page():
                                         )
                                         ]
                                     ),
+
+                                    
                                     
                                     # Reste du contenue
                                     html.Div(id='page-content')

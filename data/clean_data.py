@@ -2,6 +2,7 @@
 
 import pandas as pd
 
+
 def clean_data():
     
     """Nettoyage des données de nos fichiers"""
