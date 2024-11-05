@@ -1,11 +1,13 @@
 from dash import dcc, html
 from dashboard.histogram_page.histogram import create_histogram
+from dashboard.histogram_page.histogram2 import create_histogram_delay
 
 def create_histogram_layout():
     """Contenu de la page d'histogramme"""
 
     delay_type = 'CarrierDelay'
     histogram = create_histogram(delay_type)  # Créé l'histogramme
+    histogram2 = create_histogram_delay()  # Créé l'histogramme
 
     layout = html.Div(children=[
         # En-tête
@@ -51,7 +53,24 @@ def create_histogram_layout():
                 'fontSize': '16px',
                 'maxWidth': '800px',  # Limite la largeur pour une meilleure lisibilité
                 'margin': '0 auto'     # Centre le texte
-            })
+            }),
+
+        dcc.Graph(
+            id='histogram-graph-2',
+            figure=histogram2,
+            style={'margin-bottom': '30px'}  # Espace sous l'histogramme
+        ),
+
+        # Description
+        html.Div(children='''Cet histogramme montre le nombre d\'occurrences pour chaque type de retard.''',
+            style={
+                'textAlign': 'center',
+                'color': '#555',
+                'fontSize': '16px',
+                'maxWidth': '800px',  # Limite la largeur pour une meilleure lisibilité
+                'margin': '0 auto'     # Centre le texte
+            }),
+
     ], style={
         'backgroundColor': '#F8F9FA',  # Fond clair pour le conteneur
         'padding': '20px',

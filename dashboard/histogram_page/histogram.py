@@ -9,13 +9,16 @@ def create_histogram(delay_type):
 
     df_flight_delay_filtered = df_flight_delay[df_flight_delay[delay_type]>15]  # Filtre les données pour des retards supérieurs à 15 min
     
+    delay_counts = df_flight_delay_filtered['Airline'].value_counts().reset_index()
+    delay_counts.columns = ['Airline', 'Occurrences']
+    
     # Créé l'histogramme
     histogram = px.histogram(
-        df_flight_delay_filtered,                                                   # Sélection des données en fonction du retard
+        delay_counts,                                                               # Sélection des données en fonction du retard
         x='Airline',                                                                # Variable observée
-        y=delay_type,
+        y='Occurrences',
         title=f"Distribution des retards par compagnie aérienne ({delay_type})",    # Titre du graphique
-        labels={'Airline': 'Compagnie Aérienne', delay_type: 'Nombre occurrences'}, # Étiquettes des axes
+        labels={'Airline': 'Compagnie Aérienne', 'Occurences': 'Nombre occurrences'}, # Étiquettes des axes
         color_discrete_sequence=['purple']                                          # Couleur des barres
     )
 
