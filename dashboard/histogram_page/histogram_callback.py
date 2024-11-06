@@ -2,7 +2,7 @@
 
 from dash.dependencies import Input, Output
 from dashboard.histogram_page.histogram_layout import create_histogram
-
+#Callback
 def create_histogram_callback(app):
 
     """Callback de histogram page"""
