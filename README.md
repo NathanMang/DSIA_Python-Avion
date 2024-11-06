@@ -47,7 +47,7 @@ Le dashboard utilise plusieurs ensembles de données, incluant :
 
 L'analyse des retards aériens vise à identifier et comprendre les facteurs influençant les délais des vols aux États-Unis. Ces retards peuvent survenir à l’arrivée ou au départ, et sont influencés par des variables telles que la compagnie aérienne, le type de retard, l’aéroport d’origine et la distance parcourue. Les causes de ces retards sont diverses, incluant des problèmes météorologiques, des questions de sécurité, ou des retards attribués aux compagnies aériennes elles-mêmes.
 
-Objectifs de l'analyse :
+**Objectifs de l'analyse :**
 
 •	Identifier les compagnies aériennes les plus affectées par les retards et en comprendre les causes principales.
 
@@ -66,8 +66,11 @@ Les données utilisées dans cette analyse proviennent de deux sources principal
 _Variables clés :_
 
 •	_Compagnie Aérienne(Airline)_: Code unique représentant chaque compagnie aérienne.
+
 •	_Type de Retard_ : Catégorisations des retards (retard à l’arrivée, retard du transporteur, retard dû à la météo, retard lié à la gestion nationale, retard de sécurité).
+
 •	_Aéroport d’Origine (Org_Airport)_ : Code IATA de l’aéroport de départ.
+
 •	_Latitude et Longitude_ : Coordonnées géographiques des aéroports, permettant la visualisation géographique des données.
 
 **3. Méthodologie**
