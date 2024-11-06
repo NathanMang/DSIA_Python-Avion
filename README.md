@@ -48,8 +48,11 @@ Le dashboard utilise plusieurs ensembles de données, incluant :
 L'analyse des retards aériens vise à identifier et comprendre les facteurs influençant les délais des vols aux États-Unis. Ces retards peuvent survenir à l’arrivée ou au départ, et sont influencés par des variables telles que la compagnie aérienne, le type de retard, l’aéroport d’origine et la distance parcourue. Les causes de ces retards sont diverses, incluant des problèmes météorologiques, des questions de sécurité, ou des retards attribués aux compagnies aériennes elles-mêmes.
 
 Objectifs de l'analyse :
+
 •	Identifier les compagnies aériennes les plus affectées par les retards et en comprendre les causes principales.
+
 •	Analyser la répartition des retards en fonction des types de retard (retard du transporteur, météo, gestion aérienne nationale, sécurité).
+
 •	Visualiser les délais moyens de décollage par aéroport et observer les différences géographiques.
 
 **2. Description des données**
@@ -75,8 +78,9 @@ Un histogramme dynamique a été conçu pour visualiser la répartition des reta
 _**Visualisation Géographique des Délais de Décollage (TaxiOut) :**_
 Pour mieux comprendre l'impact des retards au sol avant le décollage, une carte choroplèthe a été développée. Cette carte utilise une échelle de couleur allant du vert (délais de taxi inférieurs à 15 minutes) au rouge (délais de taxi supérieurs à 30 minutes). Elle est enrichie par une légende et des infobulles indiquant la durée moyenne de taxi pour chaque aéroport, permettant une vue d'ensemble géographique et une identification rapide des aéroports ayant des retards importants.
 
-_Résultats observés pour l’histogramme :_
+**_Résultats observés pour l’histogramme :_**
 Pour chaque type de retard, le nombre total d’occurrences de retard supérieur à 15 minutes pour toutes compagnies confondues est le suivant :
+
 •	CarrierDelay : 141 000 occurrences
 •	WeatherDelay : 21 500 occurrences
 •	NASDelay : 105 600 occurrences
@@ -98,9 +102,13 @@ Analyse des Compagnies Aériennes
 Pour chaque type de retard, certaines compagnies sont récurrentes dans le top des plus affectées par les retards :
 
 •	American Airlines Inc.
+
 •	Southwest Airlines Co.
+
 •	American Eagle Airlines Inc.
+
 •	United Air Lines Inc.
+
 Ces compagnies apparaissent souvent dans le top 4 des plus impactées, montrant un besoin d'optimisation dans la gestion de leurs opérations pour réduire les retards.
 
 _**Résultats observés pour la carte choroplèthe :**_
