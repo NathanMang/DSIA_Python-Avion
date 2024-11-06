@@ -12,7 +12,7 @@ def create_histogram_layout():
     layout = html.Div(children=[
         # En-tête
         html.H1(children='Histogramme des Retards Aériens par Compagnie',
-                style={'textAlign': 'center', 'color': '#007BFF', 'margin-bottom': '30px', 'fontFamily': 'Arial, sans-serif'}),
+                style={'textAlign': 'center', 'color': '#007BFF', 'marginBottom': '30px', 'fontFamily': 'Arial, sans-serif'}),
 
         # Menu déroulant pour sélectionner le type de retard
         dcc.Dropdown(
@@ -32,7 +32,7 @@ def create_histogram_layout():
                 'padding': '10px',              # Ajoute un peu de padding
                 'fontSize': '16px',             # Agrandit le texte
                 'borderRadius': '5px',          # Coins arrondis
-                'boxShadow': '0 2px 5px rgba(0, 0, 0, 0.1)'  # Ombre douce
+                'boxShadow': '0 2px 5px rgba(0, 0, 0, 0.1)'  # Ombre 
             }
         ),
 
@@ -40,29 +40,29 @@ def create_histogram_layout():
         dcc.Graph(
             id='histogram-graph',
             figure=histogram,
-            style={'margin-bottom': '30px'}  # Espace sous l'histogramme
+            style={'marginBottom': '30px'}  # Espace sous l'histogramme
         ),
 
         # Description
-        html.Div(children='''Cet histogramme montre le nombre d\'occurrences des retards aériens en fonction de la compagnie 
-            et du type de retard sélectionné. Explorez les différentes catégories de retards pour mieux comprendre 
-            les impacts sur les horaires des vols. Utilisez le menu déroulant pour changer le type de retard affiché.''',
+        html.Div(children='''Cet histogramme montre le nombre d'occurrences des retards aériens en fonction de la compagnie et du type de retard sélectionné. Le dataset contient uniquement des vols ayant subi des retards en 2019, et pour cette visualisation, seuls les vols ayant eu des retards supérieurs à 15 minutes ont été retenus. Cela signifie que chaque barre représente le nombre de retards significatifs pour chaque compagnie aérienne.
+
+                Explorez les différentes catégories de retards pour mieux comprendre les impacts sur les horaires des vols. Utilisez le menu déroulant pour changer le type de retard affiché.''',
             style={
                 'textAlign': 'center',
                 'color': '#555',
                 'fontSize': '16px',
-                'maxWidth': '800px',  # Limite la largeur pour une meilleure lisibilité
+                'maxWidth': '800px',   # Limite la largeur pour une meilleure lisibilité
                 'margin': '0 auto'     # Centre le texte
             }),
 
         dcc.Graph(
             id='histogram-graph-2',
             figure=histogram2,
-            style={'margin-bottom': '30px'}  # Espace sous l'histogramme
+            style={'marginBottom': '30px'}  # Espace sous l'histogramme
         ),
 
         # Description
-        html.Div(children='''Cet histogramme montre le nombre d\'occurrences pour chaque type de retard.''',
+        html.Div(children='''Cet histogramme illustre le nombre d'occurrences pour chaque type de retard aérien, en mettant l'accent sur les retards supérieurs à 15 minutes. Cet histogramme a été créé pour permettre une visualisation claire et rapide des retards aériens par type, afin de mieux comprendre les différentes causes des retards. \n En observant les données, on peut noter une disparité significative entre les types de retards.''',
             style={
                 'textAlign': 'center',
                 'color': '#555',
@@ -72,10 +72,10 @@ def create_histogram_layout():
             }),
 
     ], style={
-        'backgroundColor': '#F8F9FA',  # Fond clair pour le conteneur
+        'backgroundColor': '#F8F9FA',  # Fond clair 
         'padding': '20px',
         'borderRadius': '8px',         # Coins arrondis
-        'boxShadow': '0 4px 20px rgba(0, 0, 0, 0.1)',  # Ombre douce pour le conteneur principal
+        'boxShadow': '0 4px 20px rgba(0, 0, 0, 0.1)',  # Ombre 
         'maxWidth': '900px',           # Limite la largeur du conteneur principal
         'margin': '20px auto'          # Centre le conteneur principal avec un peu de marge
     })

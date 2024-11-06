@@ -1,73 +1,71 @@
-from dash import html, dcc
+from dash import html
 
 def create_home_layout():
-    """Contenu de home_page"""
+    """Contenu de la page d'accueil"""
 
-    layout = html.Div(children=[
+    layout = html.Div(children=[ 
         # En-tête
         html.H1(children='Bienvenue sur le Dashboard de Retards Aériens',
-                style={
+                className="fadeIn",
+                style={ 
                     'textAlign': 'center',
                     'color': '#007BFF',
-                    'margin-bottom': '20px',
+                    'marginBottom': '20px',
                     'fontFamily': 'Arial, sans-serif',
-                    'animation': 'fadeIn 1s'  # Animation d'apparition
                 }),
 
         # Description
-        html.Div(children='''
+        html.Div(children=''' 
             Ce dashboard interactif vous permet d'analyser les retards des vols aériens en fonction de plusieurs critères.
             Explorez les données pour mieux comprendre les impacts des conditions météorologiques, des compagnies aériennes 
             et d'autres facteurs sur les retards de vol. 
             Utilisez les fonctionnalités ci-dessus pour naviguer à travers les différentes visualisations et statistiques.
-        ''', style={
+        ''', className="fadeIn", style={
             'textAlign': 'center',
             'color': '#555',
             'fontSize': '18px',
-            'margin-bottom': '30px',
+            'marginBottom': '30px',
             'lineHeight': '1.6',
-            'maxWidth': '800px',  # Limite la largeur pour une meilleure lisibilité
-            'margin': '0 auto',    # Centre le texte
-            'padding': '10px',     # Ajoute un peu d'espace autour du texte
-            'backgroundColor': '#f0f8ff',  # Couleur d'arrière-plan léger
-            'borderRadius': '8px',  # Coins arrondis pour la description
-            'boxShadow': '0 2px 10px rgba(0, 0, 0, 0.1)',  # Ombre douce
-            'transition': 'transform 0.3s'  # Transition pour l'interaction
+            'maxWidth': '800px',
+            'margin': '0 auto',
+            'padding': '10px',
+            'backgroundColor': '#f0f8ff',
+            'borderRadius': '8px',
+            'boxShadow': '0 2px 10px rgba(0, 0, 0, 0.1)',
+            'transition': 'transform 0.3s'
         }),
 
         # Image illustrative
-        html.Img(id='home-image',src='../images/Avion.jpeg',
-                  style={
+        html.Img(src='retard.jpg',  # Chemin vers l'image
+                  className="fadeIn",
+                  style={ 
                       'display': 'block',
                       'margin': '0 auto',
                       'width': '50%',
-                      'margin-top': '20px',
-                      'borderRadius': '10px',  # Coins arrondis
-                      'boxShadow': '0 4px 10px rgba(0, 0, 0, 0.1)',  # Ombre douce
-                      'transition': 'transform 0.3s'  # Transition pour l'image
+                      'marginTop': '20px',
+                      'borderRadius': '10px',
+                      'boxShadow': '0 4px 10px rgba(0, 0, 0, 0.1)',
+                      'transition': 'transform 0.3s'
                   }),
 
         # Footer
         html.Div(children='''© 2024 - Dashboard de Retards Aériens - Mang Nathan & Ludovic Viellard''',
-                 style={
+                 className="fadeIn",
+                 style={ 
                      'textAlign': 'center',
                      'color': '#777',
                      'fontSize': '14px',
-                     'margin-top': '50px',
+                     'marginTop': '50px',
                      'fontFamily': 'Arial, sans-serif'
                  })
-    ], style={
+    ], style={ 
         'backgroundColor': '#F8F9FA',
         'padding': '20px',
-        'borderRadius': '8px',  # Coins arrondis pour le conteneur principal
-        'boxShadow': '0 4px 20px rgba(0, 0, 0, 0.1)',  # Ombre douce pour le conteneur principal
-        'maxWidth': '900px',    # Limite la largeur du conteneur principal
-        'margin': '0 auto',      # Centre le conteneur principal
-        'animation': 'fadeIn 1s'  # Animation d'apparition pour le conteneur principal
+        'borderRadius': '8px',
+        'boxShadow': '0 4px 20px rgba(0, 0, 0, 0.1)',
+        'maxWidth': '900px',
+        'margin': '0 auto',
+        'animation': 'fadeIn 1s'  # Animation sur tout le layout
     })
 
-   
-    
-
-    # Retourne le layout de la page d'accueil
     return layout
