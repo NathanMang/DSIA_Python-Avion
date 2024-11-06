@@ -5,7 +5,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
 1. **Cloner le dépôt** :
 
-    cd myprojectLudoNathan
+    cd <chemin>
     
     git clone https://git.esiee.fr/viellarl/myprojectludo.git
 
