@@ -42,6 +42,7 @@ Le dashboard utilise plusieurs ensembles de données, incluant :
 ## Rapport d'analyse
 
 Rapport d’Analyse des Données de Retards Aériens
+
 **1. Introduction**
 
 L'analyse des retards aériens vise à identifier et comprendre les facteurs influençant les délais des vols aux États-Unis. Ces retards peuvent survenir à l’arrivée ou au départ, et sont influencés par des variables telles que la compagnie aérienne, le type de retard, l’aéroport d’origine et la distance parcourue. Les causes de ces retards sont diverses, incluant des problèmes météorologiques, des questions de sécurité, ou des retards attribués aux compagnies aériennes elles-mêmes.
@@ -66,6 +67,7 @@ Les données ont été nettoyées pour éliminer les valeurs manquantes et les d
 Pour garantir la pertinence de l'analyse des retards, seules les données concernant les retards supérieurs à 15 minutes ont été retenues. Des visualisations interactives ont été élaborées pour faciliter l'exploration des données par les utilisateurs.
 
 **4. Analyse et Visualisation**
+
 Distribution des Retards par Compagnie Aérienne :
 Un histogramme dynamique a été conçu pour visualiser la répartition des retards parmi les différentes compagnies aériennes. Comme notre jeu de données se concentre uniquement sur les vols ayant subi des retards, le nombre de vols répertoriés par compagnie représente directement le nombre de vols en retard pour chaque compagnie. Cet histogramme est équipé d’un menu déroulant qui permet aux utilisateurs de sélectionner divers types de retards, offrant ainsi une vue plus détaillée sur les raisons des retards. Seules les occurrences de retards dépassant 15 minutes ont été considérées pour éviter de comptabiliser de légers décalages et se concentrer sur les délais significatifs.
 
@@ -115,6 +117,7 @@ o	Les infobulles associées à chaque aéroport fournissent des détails supplé
 
 
 **Conclusion :**
+
 Cette analyse a permis de mettre en évidence les principaux facteurs de retards, notamment :
 •	LateAircraftDelay et CarrierDelay sont les retards les plus fréquents, indiquant des opportunités d’amélioration pour les compagnies aériennes en termes de gestion interne.
 •	Les retards dus à la météo et à la sécurité, bien que moins fréquents, ont un impact significatif en raison de leur imprévisibilité et de leur importance en matière de sécurité.
