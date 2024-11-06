@@ -3,9 +3,12 @@
 
 Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étapes ci-dessous :
 
-1. **Cloner le dépôt** : 
-    git clone https://git.esiee.fr/viellarl/myprojectludo.git 
+1. **Cloner le dépôt** :
     cd myprojectLudoNathan
+    
+    git clone https://git.esiee.fr/viellarl/myprojectludo.git
+
+    
 
 2. **Installez les dépendances** : 
     pip install -r requirements.txt
