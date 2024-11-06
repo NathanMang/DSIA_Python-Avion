@@ -87,12 +87,17 @@ _**Visualisation Géographique des Délais de Décollage (TaxiOut) :**_
 Pour mieux comprendre l'impact des retards au sol avant le décollage, une carte choroplèthe a été développée. Cette carte utilise une échelle de couleur allant du vert (délais de taxi inférieurs à 15 minutes) au rouge (délais de taxi supérieurs à 30 minutes). Elle est enrichie par une légende et des infobulles indiquant la durée moyenne de taxi pour chaque aéroport, permettant une vue d'ensemble géographique et une identification rapide des aéroports ayant des retards importants.
 
 **_Résultats observés pour l’histogramme :_**
+
 Pour chaque type de retard, le nombre total d’occurrences de retard supérieur à 15 minutes pour toutes compagnies confondues est le suivant :
 
 •	CarrierDelay : 141 000 occurrences
+
 •	WeatherDelay : 21 500 occurrences
+
 •	NASDelay : 105 600 occurrences
+
 •	SecurityDelay : 830 occurrences
+
 •	LateAircraftDelay : 225 000 occurrences
 
 **Analyse des Résultats:**
