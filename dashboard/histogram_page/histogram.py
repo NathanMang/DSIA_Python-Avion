@@ -3,9 +3,7 @@ import plotly.express as px
 
 def create_histogram(delay_type):
 
-    """Création de l'histogramme sur la répartition des distances de vols en fonction du mois"""
-
-    df_flight_delay=pd.read_csv('data//clean//Flight_Delay_Clean.csv')  # Charge nos données nettoyer dans un data frame
+    df_flight_delay=pd.read_csv('data//clean//Flight_Delay_Clean.csv')  # Charge nos données nettoyées dans un data frame
 
     df_flight_delay_filtered = df_flight_delay[df_flight_delay[delay_type]>15]  # Filtre les données pour des retards supérieurs à 15 min
     

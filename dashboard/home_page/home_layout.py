@@ -64,8 +64,8 @@ def create_home_layout():
         'borderRadius': '8px',
         'boxShadow': '0 4px 20px rgba(0, 0, 0, 0.1)',
         'maxWidth': '900px',
-        'margin': '0 auto',
-        'animation': 'fadeIn 1s'  # Animation sur tout le layout
+        'margin': '0 auto'
+        
     })
 
     return layout

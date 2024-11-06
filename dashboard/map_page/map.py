@@ -4,9 +4,6 @@ import pandas as pd
 import folium
 
 def add_marker(row, map_obj):
-    
-    """Ajoute un marqueur à la map fournit en paramètre"""
-
     # Définit la couleur du marqueur en fonction du délai
     taxi_out = row['TaxiOut']
     if taxi_out < 15:
@@ -26,7 +23,7 @@ def add_marker(row, map_obj):
         fill=True,                                      # Remplit le marqueur
         fill_color=color,                               # Couleur de remplissage du marqueur
         fill_opacity=0.6,                               # Opacité du marqueur
-        popup=f"{row['Origin']}: {row['TaxiOut']}min", # Affichage du popup quand on appuie sur le marqueur (ex: "DEN: 18.44 min")
+        popup=f"{row['Origin']}: {row['TaxiOut']}min",  # Affichage du popup quand on appuie sur le marqueur (ex: "DEN: 18.44 min")
     ).add_to(map_obj)                                   # Ajoute le marqueur à la map
 
 def create_map():

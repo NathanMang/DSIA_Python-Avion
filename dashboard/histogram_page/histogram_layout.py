@@ -1,6 +1,7 @@
 from dash import dcc, html
 from dashboard.histogram_page.histogram import create_histogram
 from dashboard.histogram_page.histogram2 import create_histogram_delay
+from dashboard.histogram_page.histogramArrDelay import create_histogram_arrival_delay
 
 def create_histogram_layout():
     """Contenu de la page d'histogramme"""
@@ -8,6 +9,7 @@ def create_histogram_layout():
     delay_type = 'CarrierDelay'
     histogram = create_histogram(delay_type)  # Créé l'histogramme
     histogram2 = create_histogram_delay()  # Créé l'histogramme
+    histogramArrDelay=create_histogram_arrival_delay()
 
     layout = html.Div(children=[
         # En-tête
@@ -35,6 +37,23 @@ def create_histogram_layout():
                 'boxShadow': '0 2px 5px rgba(0, 0, 0, 0.1)'  # Ombre 
             }
         ),
+
+
+        dcc.Graph(
+            id='histogramArrDelay',
+            figure=histogramArrDelay,
+            style={'marginBottom': '30px'}  # Espace sous l'histogramme
+        ),
+
+        # Description
+        html.Div(children='''Cet histogramme illustre la répartition des retards d'arrivée des vols aériens, en se concentrant sur ceux ayant des retards supérieurs à 15 minutes. Les données proviennent des vols aériens ayant subi des retards en 2019, et seules les retards ayant plus de 6000 occurrences sont affichées ici. Nous choisissons de visualiser uniquement les retards d'arrivée ayant plus de 6000 occurrences afin de se concentrer sur les retards les plus fréquents et de simplifier l'analyse. Les retards moins fréquents, bien qu'intéressants, peuvent occuper une portion trop petite de l'histogramme. Chaque barre représente le nombre d'occurrences pour un retard d'arrivée spécifique, mettant en lumière les retards les plus fréquents dans cette plage. Cette visualisation permet d'explorer l'impact des différents retards d'arrivée sur les horaires des vols et d'obtenir une vue d'ensemble sur la distribution de ces retards significatifs.''',
+            style={
+                'textAlign': 'center',
+                'color': '#555',
+                'fontSize': '16px',
+                'maxWidth': '800px',   # Limite la largeur pour une meilleure lisibilité
+                'margin': '0 auto'     # Centre le texte
+            }),
 
         # Affichage de l'histogramme
         dcc.Graph(
@@ -70,6 +89,7 @@ def create_histogram_layout():
                 'maxWidth': '800px',  # Limite la largeur pour une meilleure lisibilité
                 'margin': '0 auto'     # Centre le texte
             }),
+        
 
     ], style={
         'backgroundColor': '#F8F9FA',  # Fond clair 

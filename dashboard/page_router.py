@@ -26,7 +26,7 @@ def create_router_page():
                                         'justifyContent': 'center',
                                         'alignItems': 'center',
                                         'padding': '15px 0',
-                                        'backgroundColor': '#ffffff',       # Fond blanc pour un aspect moderne
+                                        'backgroundColor': '#ffffff',       # Fond blanc
                                         'borderBottom': '2px solid #e0e0e0',# Ligne de séparation douce en bas
                                         'boxShadow': '0px 4px 6px rgba(0, 0, 0, 0.1)'  # Légère ombre pour la profondeur
                                         }, 

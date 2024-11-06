@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.express as px
 
-#Nombre d'occurrences de chaque type de délai
+
 def create_histogram_delay():
 
     # Charger les données
