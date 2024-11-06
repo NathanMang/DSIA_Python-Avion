@@ -56,17 +56,22 @@ Objectifs de l'analyse :
 •	Visualiser les délais moyens de décollage par aéroport et observer les différences géographiques.
 
 **2. Description des données**
-Les données utilisées dans cette analyse proviennent de deux sources principales :
-•	_Fichier de Retards de Vols_ : Ce fichier contient des informations sur les retards, incluant l'aéroport d'origine, la compagnie aérienne, les types de retard, et la durée du vol.
-•	_Fichier de Coordonnées Géographiques des Aéroports_ : Utilisé pour associer les retards de vol aux localisations géographiques des aéroports.
-Variables clés :
 
-•	_Compagnie Aérienne (Airline) _: Code unique représentant chaque compagnie aérienne.
+Les données utilisées dans cette analyse proviennent de deux sources principales :
+
+•	_Fichier de Retards de Vols_ : Ce fichier contient des informations sur les retards, incluant l'aéroport d'origine, la compagnie aérienne, les types de retard, et la durée du vol.
+
+•	_Fichier de Coordonnées Géographiques des Aéroports_ : Utilisé pour associer les retards de vol aux localisations géographiques des aéroports.
+
+_Variables clés :_
+
+•	_Compagnie Aérienne(Airline)_: Code unique représentant chaque compagnie aérienne.
 •	_Type de Retard_ : Catégorisations des retards (retard à l’arrivée, retard du transporteur, retard dû à la météo, retard lié à la gestion nationale, retard de sécurité).
 •	_Aéroport d’Origine (Org_Airport)_ : Code IATA de l’aéroport de départ.
 •	_Latitude et Longitude_ : Coordonnées géographiques des aéroports, permettant la visualisation géographique des données.
 
 **3. Méthodologie**
+
 Les données ont été nettoyées pour éliminer les valeurs manquantes et les doublons. Pour établir la carte choroplèthe, un filtrage a été effectué pour ne conserver que les aéroports parmi les 40 plus fréquentés aux États-Unis, assurant ainsi une analyse ciblée et pertinente. De plus, une jointure entre les deux fichiers de données a permis d'associer les coordonnées géographiques aux aéroports concernés.
 Pour garantir la pertinence de l'analyse des retards, seules les données concernant les retards supérieurs à 15 minutes ont été retenues. Des visualisations interactives ont été élaborées pour faciliter l'exploration des données par les utilisateurs.
 
@@ -112,7 +117,9 @@ Pour chaque type de retard, certaines compagnies sont récurrentes dans le top d
 Ces compagnies apparaissent souvent dans le top 4 des plus impactées, montrant un besoin d'optimisation dans la gestion de leurs opérations pour réduire les retards.
 
 _**Résultats observés pour la carte choroplèthe :**_
+
 La carte choroplèthe développée pour visualiser les délais moyens de décollage (TaxiOut) révèle des disparités géographiques marquées dans les performances des aéroports à travers les États-Unis. Voici les principaux résultats :
+
 _1.	Impact sur la Côte Est :_
 o	Les aéroports de la côte est, en particulier ceux situés dans la région de New York, présentent des délais de taxi moyens significativement plus longs. Les temps moyens de décollage après embarquement des passagers varient de 20 à 40 minutes, atteignant des valeurs particulièrement élevées pour les aéroports tels que John F. Kennedy International Airport (JFK), LaGuardia Airport (LGA), et Newark Liberty International Airport (EWR). Ces retards au décollage peuvent être attribués à une combinaison de congestion aérienne, de restrictions météorologiques et d'une forte densité de trafic, rendant cette région l'une des plus critiques en termes de ponctualité des vols.
 
