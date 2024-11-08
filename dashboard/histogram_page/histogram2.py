@@ -9,6 +9,7 @@ def create_histogram_delay():
 
     # Filtrer les colonnes liées aux différents types de retard
     delay_types = ['CarrierDelay', 'WeatherDelay', 'NASDelay', 'SecurityDelay', 'LateAircraftDelay']
+    # Compte pour des délais supérieur à 15 min
     delay_counts = {delay_type: (df_flight_delay[delay_type] > 15).sum() for delay_type in delay_types}
 
     # Convertir le dictionnaire en DataFrame pour visualisation
@@ -28,4 +29,6 @@ def create_histogram_delay():
         xaxis_title="Type de Retard",
         yaxis_title="Nombre d'Occurrences"
     )
+
+    # Retourne l'histogramme
     return histogram_type_delay  

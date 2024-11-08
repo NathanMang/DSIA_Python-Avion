@@ -6,11 +6,11 @@ from dashboard.histogram_page.histogramArrDelay import create_histogram_arrival_
 def create_histogram_layout():
     """Contenu de la page d'histogramme"""
 
-    delay_type = 'CarrierDelay'
-    histogram = create_histogram(delay_type)  # Créé l'histogramme
-    histogram2 = create_histogram_delay()  # Créé l'histogramme
-    min_delay,max_delay=0,20
-    histogramArrDelay=create_histogram_arrival_delay(min_delay, max_delay)
+    delay_type = 'CarrierDelay'                                             # Valeur par défaut pour l'affichage de l'histogram
+    histogram = create_histogram(delay_type)                                # Créé l'histogramme
+    histogram2 = create_histogram_delay()                                   # Créé l'histogramDelay
+    min_delay,max_delay=15,30                                                # Valeur par défaut pour l'affichage de l'histogramArrDelay
+    histogramArrDelay=create_histogram_arrival_delay(min_delay, max_delay)  # Créé l'histogramArrDelay
 
     layout = html.Div(children=[
         # En-tête
@@ -21,13 +21,15 @@ def create_histogram_layout():
         # RangeSlider pour ajuster la plage des retards d'arrivée (min et max)
         dcc.RangeSlider(
             id='delay-range-slider',
-            min=15,
-            max=120,
-            step=1,
+            min=15,     # Valeur minimum
+            max=120,    # Valeur maximum
+            step=1,     # Step
             marks={i: str(i) for i in range(15, 120, 5)},  # Marques de 5 en 5
             value=[15, 30],  # Valeur initiale (plage 15 à 30)
             tooltip={"placement": "bottom", "always_visible": True},  # Afficher la valeur des curseurs
-        ),      
+        ),
+
+        # Affichage de l'histogramArrDelay 
         dcc.Graph(
             id='histogramArrDelay',
             figure=histogramArrDelay,
@@ -86,7 +88,8 @@ def create_histogram_layout():
                 'maxWidth': '800px',   # Limite la largeur pour une meilleure lisibilité
                 'margin': '0 auto'     # Centre le texte
             }),
-
+        
+        # Affichage de l'histogramDelay
         dcc.Graph(
             id='histogram-graph-2',
             figure=histogram2,

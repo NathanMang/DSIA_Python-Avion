@@ -1,8 +1,9 @@
 """Main"""
 
-from data.clean_data import clean_data
-from dashboard.page_router import create_router_page
-from dashboard.histogram_page.histogram_callback import create_histogram_callback
+# Importe les fichiers nécessaires
+from data.clean_data import clean_data                                              # Fichier de nettoyage des données
+from dashboard.page_router import create_router_page                                # Fichier de création de la page router
+from dashboard.histogram_page.histogram_callback import create_histogram_callback   # Fichier de création des callbacks
 
 def main():
 

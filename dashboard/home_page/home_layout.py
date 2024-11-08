@@ -36,17 +36,13 @@ def create_home_layout():
         }),
 
         # Image illustrative
-        html.Img(src='retard.jpg',  # Chemin vers l'image
-                  className="fadeIn",
-                  style={ 
-                      'display': 'block',
-                      'margin': '0 auto',
-                      'width': '50%',
-                      'marginTop': '20px',
-                      'borderRadius': '10px',
-                      'boxShadow': '0 4px 10px rgba(0, 0, 0, 0.1)',
-                      'transition': 'transform 0.3s'
-                  }),
+        html.Img(src='https://i.topito.com/pSCBxE1Pferq4l9m4XB7GpsfzVk_-0rm9t3InmCfjXo=/1340x704/smart/filters:fill(white):format(webp):quality(70)/https%3A%2F%2Fmedia.topito.com%2Fwp-content%2Fuploads%2F2017%2F04%2Ftop-retard-avion.jpg', 
+                 style={'width': '75%', 
+                        'height': 'auto', 
+                        'display': 'block', 
+                        'margin': '0 auto'
+                        }
+                ),
 
         # Footer
         html.Div(children='''© 2024 - Dashboard de Retards Aériens - Mang Nathan & Ludovic Viellard''',

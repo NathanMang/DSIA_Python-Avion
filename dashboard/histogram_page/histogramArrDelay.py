@@ -42,4 +42,5 @@ def create_histogram_arrival_delay(min_delay, max_delay):
         
     )
 
+    # Retourne l'histogramme
     return histogram_arr_delay

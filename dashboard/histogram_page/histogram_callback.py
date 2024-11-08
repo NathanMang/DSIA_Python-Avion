@@ -21,9 +21,12 @@ def create_histogram_callback(app):
 
     # callback pour l'histogramme dynamique basé sur la plage de retards d'arrivée
     @app.callback(
-        Output('histogramArrDelay', 'figure'),
-        Input('delay-range-slider', 'value')
+        Output('histogramArrDelay', 'figure'),  # Composant à mettre à jour selon la valeur d'entrée (histogramArrDelay)
+        Input('delay-range-slider', 'value')    # Entrée de la valeur (Intervalles de minutes)
     )
     def update_arrival_delay_histogram(selected_range):
-        min_delay, max_delay = selected_range  # Récupérer min et max à partir du range slider
-        return create_histogram_arrival_delay(min_delay, max_delay)
+
+        """Mise à jour du composant (histogrammeArrDelay)"""
+
+        min_delay, max_delay = selected_range                       # Récupérer min et max à partir du range slider
+        return create_histogram_arrival_delay(min_delay, max_delay) # # Retourne le nouveau histogramArrDelay
