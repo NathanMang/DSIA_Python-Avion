@@ -5,20 +5,33 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
 1. **Cloner le dépôt** :
 
-    cd cheminpourouvrirleprojet
-    
-    git clone https://git.esiee.fr/viellarl/myprojectludo.git
+   Créer un dossier pour récupérer le projet
 
-    
+   Saisissez dans votre terminal:
 
-2. **Installez les dépendances** : 
-    pip install -r requirements.txt
+   cd cheminpourouvrirleprojet
+    
+   git clone https://git.esiee.fr/viellarl/myprojectludo.git
+
+2. **Ouvrir le projet** : 
+
+   Lancer Visual Studio Code et ouvrir votre dossier: File -> Open Folder
+
+3. **Installez les dépendances** :
+
+   Tapez la ligne de commande suivante dans le terminal:
+
+       pip install -r requirements.txt
 
 3. **Lancer le dashboard** : 
-    python main.py
+
+   Tapez la ligne de commande suivante dans le terminal:
+   
+       python main.py
 
 4. **Accédez au dashboard** :
-    http://127.0.0.1:8050/
+
+   http://127.0.0.1:8050/
 
 
 ## Data
