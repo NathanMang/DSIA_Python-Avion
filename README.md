@@ -86,7 +86,7 @@ Pour garantir la pertinence de l'analyse des retards, seules les données concer
 
 _**Distribution des retards d’arrivée :**_
 
-Cet histogramme illustre la répartition des retards d'arrivée des vols aériens en 2019, en se concentrant sur ceux ayant un retard supérieur à 15 minutes. Les données analysées concernent exclusivement les retards ayant eu plus de 6000 occurrences, ce qui permet de mettre en avant les retards les plus fréquents et d’alléger la complexité de l’histogramme. En filtrant ainsi les retards d'arrivée, l’objectif est de focaliser l’analyse sur les retards les plus significatifs, tout en écartant ceux qui occupent une part trop faible pour être représentatifs dans l'histogramme.
+Cet histogramme illustre la répartition des retards d'arrivée des vols aériens en 2019, en se concentrant sur ceux ayant un retard supérieur à 15 minutes. Les données analysées concernent exclusivement les retards ayant eu plus de 1000 occurrences, ce qui permet de mettre en avant les retards les plus fréquents et d’alléger la complexité de l’histogramme. En filtrant ainsi les retards d'arrivée, l’objectif est de focaliser l’analyse sur les retards les plus significatifs, tout en écartant ceux qui occupent une part trop faible pour être représentatifs dans l'histogramme.
 
 Chaque barre représente le nombre d'occurrences d'une durée de retard d'arrivée spécifique, mettant en évidence les retards les plus fréquents. Cette visualisation offre une vue d'ensemble sur la distribution des retards d'arrivée majeurs, permettant d’explorer leur impact sur la ponctualité des vols et d’identifier les plages de retard les plus récurrentes.
 
