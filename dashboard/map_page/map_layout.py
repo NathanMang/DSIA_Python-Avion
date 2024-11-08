@@ -2,7 +2,7 @@
 
 from dash import html
 from dashboard.map_page.map import create_map
-#MAP 
+
 def create_map_layout():
     """Contenu de map_page """
     
