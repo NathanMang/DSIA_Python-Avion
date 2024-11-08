@@ -1,3 +1,4 @@
+"""Histogramme dynamique en fonction du temps de retard d'arrivé"""
 import pandas as pd
 import plotly.express as px
 

@@ -1,3 +1,4 @@
+"""Home layout"""
 from dash import html
 
 def create_home_layout():

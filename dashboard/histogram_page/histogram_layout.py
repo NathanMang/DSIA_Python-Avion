@@ -1,14 +1,15 @@
+"""Histogram layout"""
 from dash import dcc, html
-from dashboard.histogram_page.histogram import create_histogram
-from dashboard.histogram_page.histogram2 import create_histogram_delay
-from dashboard.histogram_page.histogramArrDelay import create_histogram_arrival_delay
+from dashboard.histogram_page.histogram_airline import create_histogram
+from dashboard.histogram_page.histogram_type_delay import create_histogram_delay
+from dashboard.histogram_page.histogram_arr_delay import create_histogram_arrival_delay
 
 def create_histogram_layout():
     """Contenu de la page d'histogramme"""
 
     delay_type = 'CarrierDelay'                                             # Valeur par défaut pour l'affichage de l'histogram
-    histogram = create_histogram(delay_type)                                # Créé l'histogramme
-    histogram2 = create_histogram_delay()                                   # Créé l'histogramDelay
+    histogram_airline = create_histogram(delay_type)                                # Créé l'histogramme
+    histogram_type_delay = create_histogram_delay()                                   # Créé l'histogramDelay
     min_delay,max_delay=15,30                                                # Valeur par défaut pour l'affichage de l'histogramArrDelay
     histogramArrDelay=create_histogram_arrival_delay(min_delay, max_delay)  # Créé l'histogramArrDelay
 
@@ -73,7 +74,7 @@ def create_histogram_layout():
         # Affichage de l'histogramme
         dcc.Graph(
             id='histogram-graph',
-            figure=histogram,
+            figure=histogram_airline,
             style={'marginBottom': '30px'}  # Espace sous l'histogramme
         ),
 
@@ -92,7 +93,7 @@ def create_histogram_layout():
         # Affichage de l'histogramDelay
         dcc.Graph(
             id='histogram-graph-2',
-            figure=histogram2,
+            figure=histogram_type_delay,
             style={'marginBottom': '30px'}  # Espace sous l'histogramme
         ),
 

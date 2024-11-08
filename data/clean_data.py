@@ -57,10 +57,10 @@ def clean_data():
     ).drop('LOCID', axis=1)                               # Supprime la colonne 'LOCID' identique à la colonne 'Origin'
     
     # Calcul du temps de décollage moyen (TaxiOut) par aéroport
-    df_avg_taxiout_by_airport = df_top_40_with_coords.groupby('Origin').agg({   # Regroupe les données par aéroport avec
-        'TaxiOut': 'mean',                                                      # leur moyenne de temps de décollage
-        'LATITUDE': 'first',                                                    # leur latitude
-        'LONGITUDE': 'first'                                                    # leur longitude
+    df_avg_taxiout_by_airport = df_top_40_with_coords.groupby('Origin').agg({   # Regroupe les données par aéroport 
+        'TaxiOut': 'mean',                                                      # leur moyenne de temps de décollage après embarquement total de l'avion
+        'LATITUDE': 'first',                                                    # latitude
+        'LONGITUDE': 'first'                                                    # longitude
     }).reset_index()
 
     # Arrondir le retard moyen
