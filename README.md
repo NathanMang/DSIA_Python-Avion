@@ -97,7 +97,15 @@ Un histogramme dynamique a été conçu pour visualiser la répartition des reta
 _**Visualisation Géographique des Délais de Décollage (TaxiOut) :**_
 Pour mieux comprendre l'impact des retards au sol avant le décollage, une carte choroplèthe a été développée. Cette carte utilise une échelle de couleur allant du vert (délais de taxi inférieurs à 15 minutes) au rouge (délais de taxi supérieurs à 30 minutes). Elle est enrichie par une légende et des infobulles indiquant la durée moyenne de taxi pour chaque aéroport, permettant une vue d'ensemble géographique et une identification rapide des aéroports ayant des retards importants.
 
-**_Résultats observés pour l’histogramme :_**
+**_Résultats observés pour les histogrammes :_**
+
+Pour l'histogramme "_Distribution des retards d’arrivée_" :
+
+Les résultats observés montrent une nette concentration des retards entre 0 et 23 minutes, avec un nombre d'occurrences supérieur à 10 000. Ensuite, les retards d’une durée de 24 à 30 minutes affichent un nombre d’occurrences compris entre 8 000 et 10 000. Enfin, pour des retards entre 31 et 38 minutes, le nombre d'occurrences se situe entre 6 000 et 8 000.
+
+Cette répartition démontre que la majorité des retards d’arrivée se concentre dans des délais courts, bien que certains retards plus longs restent significatifs. Cette visualisation met en relief les retards d’arrivée les plus fréquents et permet de mieux comprendre leur répartition, fournissant ainsi une base utile pour des stratégies d'optimisation visant à réduire ces retards significatifs.
+
+Pour l'histogramme "_Distribution des Retards par Compagnie Aérienne_" :
 
 Pour chaque type de retard, le nombre total d’occurrences de retard supérieur à 15 minutes pour toutes compagnies confondues est le suivant :
 
