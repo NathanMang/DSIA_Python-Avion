@@ -183,7 +183,38 @@ Ces résultats suggèrent que les compagnies aériennes pourraient optimiser leu
 
 
 ## Copyright
-Je déclare sur l'honneur que le code fourni a été produit par nous-même.
+Je déclare sur l'honneur que le code fourni a été produit par nous-même, à l’exception des lignes ci dessous par ChatGPT:
+
+_df_avg_taxiout_by_airport = df_top_40_with_coords.groupby('Origin').agg({ 
+    'TaxiOut': 'mean',
+    'LATITUDE': 'first',
+    'LONGITUDE': 'first'
+}).reset_index()_
+
+.agg() permet d'appliquer différentes fonctions d'agrégation sur les colonnes du DataFrame après avoir effectué le groupement.
 
 
+_avg_taxiout_by_airport.apply(lambda row: add_marker(row, m), axis=1)_
 
+apply() est une fonction de pandas qui permet d'appliquer une fonction à chaque élément ou à chaque ligne/colonne d'un DataFrame
+
+
+_histogram.update_traces(marker=dict(line=dict(color='black', width=1)))_
+
+marker fait référence aux propriétés de l'apparence des éléments graphiques (ici, les barres de l'histogramme).
+line=dict(color='black', width=1) : Cette partie définit les propriétés de la bordure des barres de l'histogramme.
+
+
+_dcc.Link(_
+
+Sert à créer un lien hypertexte qui permet de naviguer entre différentes pages du dashboard
+
+
+_m.get_root().html.add_child(folium.Element(legend_html))_
+
+get_root() renvoie l'élément racine de l'objet carte, qui contient tous les éléments de la carte
+folium.Element(legend_html) crée un nouvel objet Element de Folium à partir d'une chaîne de caractères HTML
+
+_html.Iframe_
+
+html.Iframe est utilisé pour intégrer un iframe HTML, qui permet d'afficher la carte à l'intérieur du dashboard .
