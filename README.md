@@ -18,25 +18,44 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
    Saisissez dans votre terminal:
 
+   ```
    cd cheminpourouvrirleprojet
     
    git clone https://git.esiee.fr/viellarl/myprojectludo.git
+   ```
 
 2. **Ouvrir le projet** : 
 
-   Lancer Visual Studio Code et ouvrir votre dossier: File -> Open Folder
+   Saisissez dans votre terminal:
+
+   ```
+   cd cheminpourouvrirleprojet/myproject_nath_ludo
+   ```
 
 3. **Installez les dépendances** :
 
    Tapez la ligne de commande suivante dans le terminal:
 
-       pip install -r requirements.txt
+   ```
+   pip install -r requirements.txt
+   ```
 
 3. **Lancer le dashboard** : 
 
+   Si vous n'avez pas Pyhton d'installer:
+   
+   ```
+   $ python --version
+   $ Python 3.12.7
+   ```
+
+   Télécharger le depuis cette [page](https://www.python.org/downloads/)
+
    Tapez la ligne de commande suivante dans le terminal:
    
-       python main.py
+   ```
+   python main.py
+   ```
 
 4. **Accédez au dashboard** :
 
