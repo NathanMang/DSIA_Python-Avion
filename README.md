@@ -49,12 +49,47 @@ Le dashboard utilise plusieurs ensembles de données, incluant :
 
 ## Developer Guide
 
+Ce guide vous permettra de comprendre l'architecture du projet et de vous aider à ajouter facilement de nouvelles pages ou de nouveaux graphiques au dashboard.
 
+Architecture du Code:
 
+dashboard/ : Contient les différents pages du dashboard
 
+   histogram_page/ : Dossier dédiée à la page des histogrammes. Chaque fichier représente un graphique (histogramme) ou une fonctionnalité de la page :
 
+      histogram_airline.py : Fichier pour générer un premier histogramme dynamique sur compagnie aérienne
 
+      histogram_arr_delay.py : Fichier pour générer un deuxième histogramme dynamique sur les retards à l'arrivée
 
+      histogram_type_delay.py : Fichier pour générer un troisième histogramme statique par type de retard
+
+      histogram_callback.py : Contient les callbacks nécessaires pour gérer les interactions de la page d'histogrammes
+
+      histogram_layout.py : Définition de la mise en page pour la page d'histogramme
+
+   home_page/ : Dossier dédiée à la page d'accueil
+
+      histogram_layout.py : Définition de la mise en page pour la page d'accueil
+
+   map_page/ : Dossier dédiée à la page de la carte
+
+      map_layout.py : Définition de la mise en page pour la page de la carte
+
+      map.py : Fichier pour générer la carte
+      
+      map.html : Carte généré par map.py sous format html
+
+   page_router.py : Gère la navigation entre les différentes pages du dashboard.
+
+data/ : Stocke les données du projet.
+
+   raw/ : Données brutes.
+
+   clean/ : Données traitées et prêtes pour l'analyse.
+
+   clean_data.py : Script pour nettoyer et préparer les données.
+
+main.py : Point d'entrée principal de l'application, qui initialise le serveur et lance l'application Dash.
 
 ## Rapport d'analyse
 
