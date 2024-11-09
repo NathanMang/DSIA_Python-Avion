@@ -19,7 +19,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
    Placez vous au niveau de votre dossier et cloner le projet en saisissant dans votre terminal:
 
    ```
-   cd cheminpourouvrirleprojet
+   cd chemindudossier
     
    git clone https://git.esiee.fr/viellarl/myprojectludo.git
    ```
