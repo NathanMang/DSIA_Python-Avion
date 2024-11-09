@@ -79,6 +79,8 @@ dashboard/ : Contient les différents pages du dashboard
          
          map.html : Carte généré par map.py sous format html
 
+      assets/ : Contient les ressources statiques de l'application (images) et les images du Readme
+
       page_router.py : Gère la navigation entre les différentes pages du dashboard.
 
 data/ : Stocke les données du projet.
