@@ -5,6 +5,15 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
 1. **Cloner le dépôt** :
 
+   Si vous n'avez pas Git d'installer:
+   
+   ```
+   $ git --version
+   git version 2.38.1.windows.1
+   ```
+
+   Télécharger le depuis cette [page](https://git-scm.com/downloads/win)
+
    Créer un dossier pour récupérer le projet
 
    Saisissez dans votre terminal:
