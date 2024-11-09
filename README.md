@@ -147,7 +147,7 @@ Un histogramme dynamique a été conçu pour visualiser la répartition des reta
 
 Pour l'histogramme "_Distribution des retards d’arrivée_" :
 
-Cet histogramme dynamique, représentant des données numériques, présente la répartition des retards d'arrivée des vols, en affichant toutes les occurrences de retards allant de 0 à 120 minutes. Toutefois, pour une analyse plus ciblée et afin d'éviter une surcharge d'informations, nous nous concentrons spécifiquement sur les plages de temps où le nombre d'occurrences est supérieur à 6000. Cette approche permet de se focaliser sur les retards les plus fréquents, offrant ainsi une vue plus claire des tendances principales dans les retards d'arrivée, tout en négligeant les cas moins significatifs. Grâce à l'interactivité de l'histogramme, l'utilisateur peut ajuster dynamiquement la plage de retards à afficher, offrant une analyse plus flexible et approfondie des données.
+Cet histogramme dynamique présente la répartition des retards d'arrivée des vols, en affichant toutes les occurrences de retards allant de 0 à 120 minutes. Toutefois, pour une analyse plus ciblée et afin d'éviter une surcharge d'informations, nous nous concentrons spécifiquement sur les plages de temps où le nombre d'occurrences est supérieur à 1000. Cette approche permet de se focaliser sur les retards les plus fréquents, offrant ainsi une vue plus claire des tendances principales dans les retards d'arrivée, tout en négligeant les cas moins significatifs. Grâce à l'interactivité de l'histogramme, l'utilisateur peut ajuster dynamiquement la plage de retards à afficher, offrant une analyse plus flexible et approfondie des données.
 
 Les résultats observés montrent une nette concentration des retards entre 0 et 23 minutes, avec un nombre d'occurrences supérieur à 10 000. Ensuite, les retards d’une durée de 24 à 30 minutes affichent un nombre d’occurrences compris entre 8 000 et 10 000. Enfin, pour des retards entre 31 et 38 minutes, le nombre d'occurrences se situe entre 6 000 et 8 000.
 
@@ -193,7 +193,7 @@ Ces compagnies apparaissent souvent dans le top 4 des plus impactées, montrant 
 
 _**Visualisation Géographique des Délais de Décollage (TaxiOut) :**_
 
-Pour mieux comprendre l'impact des retards au sol avant le décollage, une carte choroplèthe a été développée. Cette carte utilise une échelle de couleur allant du vert (délais de taxi inférieurs à 15 minutes) au rouge (délais de taxi supérieurs à 30 minutes). Elle est enrichie par une légende et des infobulles indiquant la durée moyenne de taxi pour chaque aéroport, permettant une vue d'ensemble géographique et une identification rapide des aéroports ayant des retards importants.
+Pour mieux comparer l'efficacité des aéroports à gérer le traffic des avions au sol, une carte choroplèthe a été développée. Cette carte utilise une échelle de couleur allant du vert (délais de taxi inférieurs à 15 minutes) au rouge (délais de taxi supérieurs à 30 minutes). Elle est enrichie par une légende et des infobulles indiquant la durée moyenne entre la fin d'embarquement et le décollage pour chaque aéroport, permettant une vue d'ensemble géographique et une identification rapide des aéroports ayant un manque de gestion importants.
 
 _**Résultats observés pour la carte choroplèthe :**_
 
@@ -203,7 +203,7 @@ _1.	Impact sur la Côte Est :_
 o	Les aéroports de la côte est, en particulier ceux situés dans la région de New York, présentent des délais de taxi moyens significativement plus longs. Les temps moyens de décollage après embarquement des passagers varient de 20 à 40 minutes, atteignant des valeurs particulièrement élevées pour les aéroports tels que John F. Kennedy International Airport (JFK), LaGuardia Airport (LGA), et Newark Liberty International Airport (EWR). Ces retards au décollage peuvent être attribués à une combinaison de congestion aérienne, de restrictions météorologiques et d'une forte densité de trafic, rendant cette région l'une des plus critiques en termes de ponctualité des vols.
 
 _2.	Comparaison avec la Côte Ouest :_
-o	En revanche, la côte ouest des États-Unis affiche des temps de taxi moyens qui n'excèdent généralement pas 20 minutes. Les aéroports de Los Angeles (LAX) et de San Francisco (SFO) bénéficient d'une infrastructure plus adéquate et d'une gestion du trafic aérien plus efficace, ce qui contribue à réduire les délais de décollage. Cette différence de performance souligne l'importance d'une gestion aéroportuaire optimisée pour limiter les retards.
+o	En revanche, la côte ouest des États-Unis affiche des temps de taxi moyens qui n'excèdent généralement pas 20 minutes. Les aéroports de Los Angeles (LAX) et de San Francisco (SFO) bénéficient d'une infrastructure plus adéquate et d'une gestion du trafic  plus efficace, ce qui contribue à réduire les délais de décollage. Cette différence de performance souligne l'importance d'une gestion aéroportuaire optimisée pour limiter les retards.
 
 _3.	Zones de Congestion :_
 o	La carte met en évidence des zones spécifiques où les retards sont particulièrement prononcés. Les aéroports avec des délais moyens de taxi supérieurs à 30 minutes sont clairement identifiés par des couleurs rouges sur la carte, indiquant une concentration de retards. Ces informations peuvent être cruciales pour les gestionnaires d'aéroport et les compagnies aériennes cherchant à cibler les problèmes de ponctualité dans ces régions.
@@ -222,12 +222,9 @@ Cette analyse a permis de mettre en évidence les principaux facteurs de retards
 
 Ces résultats suggèrent que les compagnies aériennes pourraient optimiser leurs opérations pour minimiser les CarrierDelays et mieux coordonner leurs vols afin de réduire les LateAircraftDelays. Les retards liés aux facteurs externes, tels que la météo et le contrôle du trafic aérien, nécessitent une coordination avec les agences de gestion du trafic aérien pour atténuer leur impact sur les voyageurs.
 
+En ce qui concerne les délais moyens de décollage (TaxiOut), l’analyse géographique a révélé des disparités importantes entre les aéroports. Cette visualisation a permis de mettre en évidence les zones de congestion les plus importante à travers le pays. Cette identification est cruciale pour cibler les aéroports nécessitant des efforts de gestion accrus et des stratégies de désengorgement, notamment pour améliorer la fluidité du trafic.
 
-
-
-
-
-
+En conclusion, cette étude fournit une base solide pour une stratégie de réduction des retards, en ciblant les principaux types de retard ainsi que les aéroports présentant les plus longs délais de décollage. Elle peut servir de point de départ pour des initiatives d'amélioration continue visant à optimiser l'efficacité des compagnies aériennes et des aéroports, offrant ainsi une meilleure expérience aux voyageurs.
 
 
 ## Copyright
