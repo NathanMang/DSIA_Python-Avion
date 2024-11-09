@@ -45,8 +45,10 @@ def clean_data():
     df_top_40_airports = df_flight_delay[df_flight_delay['Origin'].isin(df_top_40_airports_id)]  # Garde les 40 premiers aéroports
     
     # Normalisation des valeurs
-    df_top_40_airports.loc[:, 'Origin'] = df_top_40_airports['Origin'].str.strip().str.upper() # Supprime les espaces et convertit en majuscule
-    df_coord_airports.loc[:, 'LOCID'] = df_coord_airports['LOCID'].str.strip().str.upper()       # Supprime les espaces et convertit en majuscule
+    df_top_40_airports = df_top_40_airports.copy()
+    df_top_40_airports['Origin'] = df_top_40_airports['Origin'].str.strip().str.upper() # Supprime les espaces et convertit en majuscule
+    df_top_40_airports = df_top_40_airports.copy()
+    df_coord_airports['LOCID'] = df_coord_airports['LOCID'].str.strip().str.upper()       # Supprime les espaces et convertit en majuscule
 
     # Association des coordonnées des aéroports
     df_top_40_with_coords = df_top_40_airports.merge(     # Fusionne df_top_40_airports
