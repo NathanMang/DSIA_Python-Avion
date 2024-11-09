@@ -29,7 +29,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
    Saisissez dans votre terminal:
 
    ```
-   cd cheminpourouvrirleprojet/myproject_nath_ludo
+   cd cheminpourouvrirleprojet/myprojectludo
    ```
 
 3. **Installez les dépendances** :
