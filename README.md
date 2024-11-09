@@ -138,13 +138,13 @@ Cet histogramme illustre la répartition des retards d'arrivée des vols aérien
 
 Chaque barre représente le nombre d'occurrences d'une durée de retard d'arrivée spécifique, mettant en évidence les retards les plus fréquents. Cette visualisation offre une vue d'ensemble sur la distribution des retards d'arrivée majeurs, permettant d’explorer leur impact sur la ponctualité des vols et d’identifier les plages de retard les plus récurrentes.
 
-![histogramme arrival delay](assets/histogramme_arr_delay.jpg)
+![histogramme arrival delay](assets/histogramme_arr_delay.png)
 
 _**Distribution des Retards par Compagnie Aérienne :**_
 
 Un histogramme dynamique a été conçu pour visualiser la répartition des retards parmi les différentes compagnies aériennes. Comme notre jeu de données se concentre uniquement sur les vols ayant subi des retards, le nombre de vols répertoriés par compagnie représente directement le nombre de vols en retard pour chaque compagnie. Cet histogramme est équipé d’un menu déroulant qui permet aux utilisateurs de sélectionner divers types de retards, offrant ainsi une vue plus détaillée sur les raisons des retards. Seules les occurrences de retards dépassant 15 minutes ont été considérées pour éviter de comptabiliser de légers décalages et se concentrer sur les délais significatifs.
 
-![histogramme airline](assets/histogramme_airline.jpg)
+![histogramme airline](assets/histogramme_airline.png)
 
 **_Résultats observés pour les histogrammes :_**
 
@@ -199,7 +199,7 @@ _**Visualisation Géographique des Délais de Décollage (TaxiOut) :**_
 Pour mieux comparer l'efficacité des aéroports à gérer le traffic des avions au sol, une carte choroplèthe a été développée. Cette carte utilise une échelle de couleur allant du vert (délais de taxi inférieurs à 15 minutes) au rouge (délais de taxi supérieurs à 30 minutes). Elle est enrichie par une légende et des infobulles indiquant la durée moyenne entre la fin d'embarquement et le décollage pour chaque aéroport, permettant une vue d'ensemble géographique et une identification rapide des aéroports ayant un manque de gestion importants.
 
 
-![carte](assets/carte.jpg)
+![carte](assets/carte.png)
 
 _**Résultats observés pour la carte choroplèthe :**_
 
