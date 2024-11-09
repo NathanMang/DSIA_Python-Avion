@@ -83,11 +83,11 @@ dashboard/ : Contient les différents pages du dashboard
 
 data/ : Stocke les données du projet.
 
-   /t raw/ : Données brutes.
+      raw/ : Données brutes.
 
-   clean/ : Données traitées et prêtes pour l'analyse.
+      clean/ : Données traitées et prêtes pour l'analyse.
 
-   clean_data.py : Script pour nettoyer et préparer les données.
+      clean_data.py : Script pour nettoyer et préparer les données.
 
 main.py : Point d'entrée principal de l'application, qui initialise le serveur et lance l'application Dash.
 
