@@ -83,7 +83,7 @@ dashboard/ : Contient les différents pages du dashboard
 
 data/ : Stocke les données du projet.
 
-   raw/ : Données brutes.
+   \traw/ : Données brutes.
 
    clean/ : Données traitées et prêtes pour l'analyse.
 
