@@ -16,7 +16,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
    Créer un dossier pour récupérer le projet
 
-   Saisissez dans votre terminal:
+   Placez vous au niveau de votre dossier et cloner le projet en saisissant dans votre terminal:
 
    ```
    cd cheminpourouvrirleprojet
@@ -26,7 +26,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
 2. **Ouvrir le projet** : 
 
-   Saisissez dans votre terminal:
+   Ouvrez le projet en saisissez dans votre terminal:
 
    ```
    cd cheminpourouvrirleprojet/myprojectludo
@@ -34,7 +34,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
 3. **Installez les dépendances** :
 
-   Tapez la ligne de commande suivante dans le terminal:
+   Installez les dépendances en saisissant la ligne de commande suivante dans le terminal:
 
    ```
    pip install -r requirements.txt
@@ -51,7 +51,7 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
    Télécharger le depuis cette [page](https://www.python.org/downloads/)
 
-   Tapez la ligne de commande suivante dans le terminal:
+   Lancez le dashboard en saisissant la ligne de commande suivante dans le terminal:
    
    ```
    python main.py
@@ -59,6 +59,8 @@ Pour déployer et utiliser ce dashboard sur une autre machine, suivez les étape
 
 4. **Accédez au dashboard** :
 
+   Accéder au dashboard à partir de cette url:
+   
    http://127.0.0.1:8050/
 
 
