@@ -55,31 +55,31 @@ Architecture du Code:
 
 dashboard/ : Contient les différents pages du dashboard
 
-   histogram_page/ : Dossier dédiée à la page des histogrammes. Chaque fichier représente un graphique (histogramme) ou une fonctionnalité de la page :
+      histogram_page/ : Dossier dédiée à la page des histogrammes. Chaque fichier représente un graphique (histogramme) ou une fonctionnalité de la page :
 
-      histogram_airline.py : Fichier pour générer un premier histogramme dynamique sur compagnie aérienne
+         histogram_airline.py : Fichier pour générer un premier histogramme dynamique sur compagnie aérienne
 
-      histogram_arr_delay.py : Fichier pour générer un deuxième histogramme dynamique sur les retards à l'arrivée
+         histogram_arr_delay.py : Fichier pour générer un deuxième histogramme dynamique sur les retards à l'arrivée
 
-      histogram_type_delay.py : Fichier pour générer un troisième histogramme statique par type de retard
+         histogram_type_delay.py : Fichier pour générer un troisième histogramme statique par type de retard
 
-      histogram_callback.py : Contient les callbacks nécessaires pour gérer les interactions de la page d'histogrammes
+         histogram_callback.py : Contient les callbacks nécessaires pour gérer les interactions de la page d'histogrammes
 
-      histogram_layout.py : Définition de la mise en page pour la page d'histogramme
+         histogram_layout.py : Définition de la mise en page pour la page d'histogramme
 
-   home_page/ : Dossier dédiée à la page d'accueil
+      home_page/ : Dossier dédiée à la page d'accueil
 
-      histogram_layout.py : Définition de la mise en page pour la page d'accueil
+         histogram_layout.py : Définition de la mise en page pour la page d'accueil
 
-   map_page/ : Dossier dédiée à la page de la carte
+      map_page/ : Dossier dédiée à la page de la carte
 
-      map_layout.py : Définition de la mise en page pour la page de la carte
+         map_layout.py : Définition de la mise en page pour la page de la carte
 
-      map.py : Fichier pour générer la carte
-      
-      map.html : Carte généré par map.py sous format html
+         map.py : Fichier pour générer la carte
+         
+         map.html : Carte généré par map.py sous format html
 
-   page_router.py : Gère la navigation entre les différentes pages du dashboard.
+      page_router.py : Gère la navigation entre les différentes pages du dashboard.
 
 data/ : Stocke les données du projet.
 
